@@ -1,0 +1,21 @@
+sequenceDiagram
+    actor B as 买家
+    actor S as 卖家
+    participant UI as 订单详情页
+    participant OS as OrderService
+    participant DB as MySQL
+    B->>UI: 下单时选择时间与校园地点
+    UI->>OS: 创建 PICKUP 订单
+    OS->>DB: 保存 Meeting 与买卖双方取件码
+    S->>UI: 查看订单，可提出改期
+    UI->>OS: 提交面交修改提议
+    OS->>DB: 检测双方时间冲突并保存提议
+    B->>UI: 接受修改
+    UI->>OS: 接受提议
+    OS->>DB: 更新正式 Meeting
+    B-->>S: 现场出示买家取件码
+    S->>OS: 验证买家码并确认交付
+    OS->>DB: sellerHandoverConfirmed = true
+    S-->>B: 出示卖家交付码
+    B->>OS: 验证卖家码并确认收货
+    OS->>DB: 订单 COMPLETED，商品 SOLD

@@ -1,0 +1,24 @@
+sequenceDiagram
+    actor B as 买家
+    participant UI as 结算/支付页面
+    participant OC as OrderController
+    participant OS as OrderService
+    participant DB as MySQL
+    participant Pay as 支付宝沙箱/模拟支付
+    B->>UI: 勾选多个商品并提交结算
+    UI->>OC: POST /api/order/checkout
+    OC->>OS: checkout(userId, cartItemIds)
+    OS->>DB: 锁定并校验 AVAILABLE 商品
+    OS->>OS: 按 sellerId 分组
+    OS->>DB: 创建卖家子订单和商品快照
+    OS->>DB: 商品更新为 RESERVED
+    OS-->>UI: 返回多张待付款订单
+    B->>UI: 点击支付
+    UI->>OC: POST /api/order/{id}/payment + idempotencyKey
+    OC->>OS: pay(orderId, userId, key)
+    OS->>DB: 悲观锁读取订单并校验金额/状态
+    OS->>Pay: 发起沙箱或模拟支付
+    Pay-->>OS: 支付结果/回调
+    OS->>DB: 验签、金额核对并记录 PAID
+    OS-->>UI: 返回首次支付结果
+    UI-->>B: Processing → Payment successful

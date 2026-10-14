@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="StudentBay 校园闲置交易，让教材、数码和宿舍好物在同学之间继续流转。">
+    <title>StudentBay 校园闲置交易</title>
+    <link rel="stylesheet" href="/css/app.css?v=hb7">
+    <script defer src="/js/app.js?v=hb5"></script>
+</head>
+<body data-page="home" class="taste-page">
+<header id="siteHeader"></header>
+
+<main>
+    <section class="home-hero shell" aria-labelledby="homeHeroTitle">
+        <div class="home-hero-copy" data-reveal>
+            <span class="eyebrow">校园认证交易</span>
+            <h1 id="homeHeroTitle">把闲置，交给下一位同学</h1>
+            <p>同校发现、放心沟通、灵活交付。每件旧物，都值得一次认真重逢。</p>
+            <div class="hero-actions">
+                <a class="btn btn-primary btn-hero" href="#marketplace">开始逛校园</a>
+                <a class="btn btn-outline btn-hero" href="/publish.html">发布闲置</a>
+            </div>
+        </div>
+        <div id="heroProductStage" class="hero-product-stage" aria-label="最新校园好物" data-reveal>
+            <div class="hero-product-skeleton"></div>
+            <div class="hero-product-skeleton"></div>
+            <div class="hero-product-skeleton"></div>
+        </div>
+    </section>
+
+    <nav class="category-rail shell" id="categoryRail" aria-label="热门分类" data-reveal></nav>
+
+    <section class="market-story shell" aria-labelledby="storyTitle">
+        <div class="story-heading" data-reveal>
+            <h2 id="storyTitle">从看到，到放心成交</h2>
+            <p>三个动作，让一件闲置在校园里继续被需要。</p>
+        </div>
+        <div class="story-stack">
+            <article class="story-card story-card-discover">
+                <div class="story-copy">
+                    <span>在附近发现</span>
+                    <h3>好东西，离你没有那么远</h3>
+                    <p>按分类、成色和价格筛选，把同校好物放到眼前。</p>
+                    <a href="#marketplace">浏览在售商品</a>
+                </div>
+                <img id="storyImageOne" class="story-image" alt="校园在售商品" hidden>
+            </article>
+            <article class="story-card story-card-talk">
+                <div class="story-copy">
+                    <span>先聊清楚</span>
+                    <h3>成色、配件、时间，都可以问</h3>
+                    <p>围绕具体商品发起咨询，公开留言与私聊各有位置。</p>
+                    <a href="/messages.html">进入消息中心</a>
+                </div>
+                <img id="storyImageTwo" class="story-image" alt="可咨询的校园商品" hidden>
+            </article>
+            <article class="story-card story-card-trade">
+                <div class="story-copy">
+                    <span>安心交付</span>
+                    <h3>当面验货，或送到宿舍楼下</h3>
+                    <p>确认订单、选择地址和支付方式，交易进度清晰可见。</p>
+                    <a href="/orders.html">查看我的订单</a>
+                </div>
+                <img id="storyImageThree" class="story-image" alt="等待交易的校园商品" hidden>
+            </article>
+        </div>
+    </section>
+
+    <section id="marketplace" class="marketplace shell" aria-labelledby="marketTitle">
+        <div class="marketplace-heading" data-reveal>
+            <div>
+                <h2 id="marketTitle">今天，校园里有什么</h2>
+                <p id="resultText" aria-live="polite">正在加载商品...</p>
+            </div>
+            <span class="market-note">仅展示在售商品</span>
+        </div>
+
+        <section class="natural-search" data-reveal aria-labelledby="naturalSearchTitle">
+            <div class="natural-search-copy">
+                <span class="eyebrow">AI assisted discovery</span>
+                <h3 id="naturalSearchTitle">直接说出你想找什么</h3>
+                <p>预算、用途、成色和面交偏好，可以写在同一句话里。</p>
+            </div>
+            <form id="naturalSearchForm" class="natural-search-form">
+                <label for="naturalQuery">需求描述</label>
+                <div><input id="naturalQuery" class="input" maxlength="300" placeholder="例如：预算150元，想买适合宿舍用的安静键盘，最好能面交" autocomplete="off"><button id="naturalSearchButton" class="btn btn-primary" type="submit">智能找商品</button></div>
+                <small id="naturalSearchHint">本地语义解析随时可用；配置 AI 后会自动增强理解。</small>
+            </form>
+            <div id="naturalInterpretation" class="natural-interpretation" aria-live="polite"></div>
+        </section>
+        <div id="hotKeywords" class="hot-keywords" data-reveal hidden></div>
+
+        <form id="filterForm" class="search-panel" data-reveal>
+            <div class="sp-search">
+            <span class="sp-search-icon" aria-hidden="true">&#8981;</span>
+            <input class="input" id="keyword" placeholder="搜索教材、数码、宿舍用品" autocomplete="off">
+            </div>
+            <label class="sp-select" for="category"><span>分类</span><select class="select" id="category"><option value="">全部分类</option></select></label>
+            <label class="sp-select" for="condition"><span>成色</span><select class="select" id="condition"><option value="">全部成色</option><option>全新</option><option>九成新</option><option>八成新</option><option>七成新及以下</option></select></label>
+            <div class="sp-price"><span>价格</span><input class="input" id="minPrice" type="number" min="0" step="0.01" placeholder="最低"><i>&#8211;</i><input class="input" id="maxPrice" type="number" min="0" step="0.01" placeholder="最高"></div>
+            <label class="sp-select" for="sort"><span>排序</span><select class="select" id="sort"><option value="newest">最新发布</option><option value="sharpen">擦亮优先</option><option value="priceAsc">价格从低到高</option><option value="priceDesc">价格从高到低</option></select></label>
+            <button class="btn btn-primary sp-submit" type="submit">查找好物</button>
+            </form>
+        </form>
+
+        <section id="productGrid" class="product-grid" aria-live="polite">
+            <div class="product-skeleton"></div><div class="product-skeleton"></div><div class="product-skeleton"></div><div class="product-skeleton"></div>
+        </section>
+        <div class="grid-load-more"><button id="loadMoreBtn" class="btn btn-outline" type="button" hidden>加载更多</button></div>
+    </section>
+</main>
+
+<footer class="footer taste-footer"><strong>StudentBay</strong><span>让每件闲置继续发挥价值</span></footer>
+<div id="stickerTrail" class="sticker-trail" aria-hidden="true"></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

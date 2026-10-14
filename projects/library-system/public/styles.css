@@ -1,0 +1,807 @@
+/* Base Styles */
+
+/* Reset and base font */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f4f7fa;
+  color: #333;
+}
+
+/* Login page specific background */
+body.login-page {
+  background-image: url('image/spiderman4.gif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+/* Toggle-password button should stay transparent */
+.toggle-password {
+  background: transparent !important;
+  color: #007bff !important;
+  padding: 0 8px;     
+  margin: 0;            
+  font-size: 0.9em;
+}
+.toggle-password:hover {
+  color: #0056b3;
+  background: none;
+}
+
+/* Anchor default and hover */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Button default and hover */
+button,
+input[type="submit"] {
+  cursor: pointer;
+  padding: 6px 12px;
+  margin: 4px;
+  background: #007bff;
+  border: none;
+  color: white;
+  border-radius: 3px;
+}
+button:hover,
+input[type="submit"]:hover {
+  background: #0056b3;
+}
+
+/* Error text */
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+
+/* Top Navigation Bar */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  background: #2d3a4b;
+  padding: 10px 20px;
+  color: white;
+}
+.topbar .logo {
+  flex: 1;
+  font-size: 2.5em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.topnav a {
+  margin-left: 15px;
+  color: white;
+  padding: 13px;
+  font-size: 1.2em;
+  margin: 1px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.topnav a.active,
+.topnav a:hover {
+  background: #1a2332;
+  border-radius: 3px;
+}
+
+/*  Main Container */
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 5px;
+}
+
+/* Toolbar: Search, Filter, Stats, Actions */
+
+.toolbar {
+  display: flex;             /* Lay out items in a row */
+  flex-wrap: wrap;           /* Wrap on small screens */
+  align-items: center;
+  gap: 100px;                 /* Space between items */
+  margin-bottom: 20px;
+}
+
+/* Search bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.search-bar input[type="text"] {
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.search-bar button {
+  background: #1e95e5;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.search-bar button:hover {
+  background: #103cc0;
+}
+
+/* Suggestions dropdown */
+.suggestions-box {
+  position: absolute;
+  background: white;
+  border: 1px solid #ccc;
+  width: 200px;
+  z-index: 10;
+}
+.suggestions-box div {
+  padding: 5px;
+  cursor: pointer;
+}
+.suggestions-box div:hover {
+  background-color: #eee;
+}
+
+/* Live client-side filter */
+.filter-live {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.filter-live label {
+  font-weight: bold;
+  color: #333;
+}
+.filter-live input {
+  padding: 6px 10px;
+  width: 180px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+.filter-live input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Stats text */
+.stats {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Action buttons */
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.action-buttons button {
+  background: #28a745;
+  color: #fff;
+  padding: 10px;
+  margin-right: 18px;
+  border-radius: 20px;
+  transition: background 0.3s ease;
+}
+.action-buttons button:hover {
+  background: #1e7e34;
+}
+
+/*  Server-side Filter Form */
+
+.filter-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 70px;
+  align-items: center;
+  justify-content: center;
+  background: #f9f9f9;
+  padding: 12px 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.filter-form label {
+  display: flex;
+  flex-direction: column;
+  font: bold 14px sans-serif;
+  color: #333;
+}
+.filter-form select {
+  font-size: 14px;
+  border-radius: 50px;
+  border: 1px solid #ccc;
+  padding: 7px 8px;
+}
+.filter-form select {
+  margin-top: 4px;
+}
+.filter-form button {
+  background: rgb(151, 151, 151);
+  color: white;
+  font-size: 14px;
+  border: none;
+  border-radius: 100px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 7px 8px;
+  gap: 10px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.filter-form button:hover {
+  background: #1da351;
+  transform: scale(1.05);
+}
+.filter-form i {
+  color: #e5a31e;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+.filter-form label:hover i {
+  transform: scale(1.2);
+  color: #c07d10;
+}
+
+/*  Book Table Styles */
+
+.book-table {
+  width: 100%;
+  border-collapse: separate;  /* Keep rounded corners if any */
+  border-spacing: 0;
+  margin-top: 20px;
+  font-size: 15px;
+}
+.book-table thead{
+  background-color: #155724;
+  color: black;
+  font-size: 20px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.book-table thead th{
+  background-color: #f7e5bd;
+  padding: 18px;
+}
+.book-table th,
+.book-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+.book-table th {
+  background: #f8f9fa;
+}
+.book-table .no-data {
+  text-align: center;
+  color: #888;
+}
+
+/* Alternating row colors */
+.book-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+/* Row hover effect */
+.book-table tr:hover {
+  background-color: #e9f5ff;
+}
+/* Column hover effect (added via JS .hover-col) */
+.book-table td.hover-col,
+.book-table th.hover-col {
+  background-color: #d1ecf1 !important;
+}
+
+/* Actions cell: links and buttons with icons */
+.book-table .actions a,
+.book-table .actions button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;               /* Space between icon and text */
+  padding: 6px 8px;
+  margin-left: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+}
+.book-table .actions a {
+  background-color: #e9ecef;
+  color: #007bff;
+  margin-right: 10px;
+}
+.book-table .actions a:hover {
+  background-color: #d0d8e1;
+}
+.book-table .actions button {
+  background-color: #dc3545;
+  color: white;
+}
+.book-table .actions button:hover {
+  background-color: #c82333;
+}
+.book-table .actions i {
+  font-size: 14px;
+}
+
+/*  Status Badges */
+
+.status {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.85em;
+  font-weight: bold;
+  display: inline-block;
+}
+.status.available {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+.status.checked-out {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/*  Pagination */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  list-style: none;
+  padding: 0;
+}
+.pagination li {
+  margin: 0 8px;
+}
+.pagination li.prev a,
+.pagination li.next a {
+  display: inline-block;
+  height: 32px;
+  line-height: 32px;
+  padding: 0 24px;
+  background: #e5a31e;
+  color: #fff;
+  border-radius: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.pagination li.prev a:hover,
+.pagination li.next a:hover {
+  background: #c07d10;
+}
+/* Number buttons */
+.pagination li a,
+.pagination li span {
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  border-radius: 50%;
+  text-decoration: none;
+  color: #e5a31e;
+  font-weight: bold;
+  border: 1px solid #e5a31e;
+  background: transparent;
+}
+.pagination li a:hover {
+  background: #eae6c4;
+}
+.pagination li.active span {
+  background: #c07d10;
+  color: #fff;
+  border-color: #c07d10;
+}
+.pagination.visible {
+  display: block;
+}
+
+/* Login Page Styles */
+
+.login-container {
+  max-width: 400px;
+  margin: 200px auto;
+  padding: 24px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.login-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+.error-list {
+  background: #fdecea;
+  color: #a94442;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  padding: 10px 14px;
+  margin-bottom: 16px;
+  list-style: none;
+}
+.error-list li {
+  margin: 4px 0;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #555;
+}
+.form-group input,
+.form-group select {
+  padding: 8px 12px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Password toggle button */
+.password-group {
+  position: relative;
+}
+.password-group input {
+  padding-right: 80px; /* space for toggle button */
+}
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.9em;
+  color: #007bff;
+  cursor: pointer;
+  user-select: none;
+  line-height: 1;
+}
+.toggle-password:hover,
+.toggle-password:focus {
+  color: #0056b3;
+}
+.toggle-password:active {
+  outline: none;
+}
+
+/* Login submit button */
+.btn {
+  width: 100%;
+  padding: 10px;
+  font-size: 1em;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.btn:hover {
+  background: #0056b3;
+}
+
+/* User Detail Styles */
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+  object-fit: cover;
+}
+.user-info p {
+  margin: 5px 0;
+}
+.error-message {
+  background-color: #fdecea;
+  color: #a33;
+  padding: 10px;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+/* make forms inline next to links */
+.inline-form {
+  display: inline-block;
+  margin: 0;
+}
+
+/* actions cell: links and buttons share style */
+.actions .action-link,
+.actions .action-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;               
+  padding: 4px 8px;
+  font-size: 0.9em;
+  border-radius: 4px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 8px;
+}
+/* Form Container */
+.form-container {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 32px 24px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+.form-container:hover {
+  transform: translateY(-4px);
+}
+
+/* Form Title */
+.form-container h1 {
+  margin-bottom: 24px;
+  font-size: 1.8em;
+  text-align: center;
+  color: #333;
+}
+
+/* Error List */
+.error-list {
+  background: #fdecea;
+  color: #a94442;
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  padding: 10px 14px;
+  margin-bottom: 20px;
+  list-style: none;
+}
+.error-list li {
+  margin: 4px 0;
+  font-size: 0.9em;
+}
+
+/* Form Groups */
+.add-book-page{
+  background-image: url('image/background.JPG');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.edit-book-page{
+  background-image: url('image/background.JPG');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+.form-group label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: black;
+}
+.form-group input,
+.form-group select {
+  padding: 10px 12px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease;
+}
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.btn:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Back Link */
+.back-link {
+  margin-top: 20px;
+  text-align: center;
+}
+.back-link a {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 0.95em;
+  transition: color 0.3s ease;
+}
+.back-link a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+/* User Detail Page Container  */
+.user-detail-page .container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Profile Section */
+.user-detail-page{
+  background-image: url('image/pkq.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.user-detail-page .user-profile {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 32px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+.user-detail-page .user-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ddd;
+}
+.user-detail-page .user-info h1 {
+  margin: 0 0 8px;
+  font-size: 2em;
+  color: #333;
+}
+.user-detail-page .user-info p {
+  margin: 4px 0;
+  font-size: 1em;
+  color: #555;
+}
+.user-detail-page .user-info .back-link {
+  display: inline-block;
+  margin-top: 12px;
+  color: #007bff;
+  transition: color .2s;
+}
+.user-detail-page .user-info .back-link:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+/* Section Titles */
+.user-detail-page h2 {
+  margin-top: 32px;
+  margin-bottom: 16px;
+  font-size: 1.5em;
+  color: #444;
+  border-bottom: 2px solid #e5e5e5;
+  padding-bottom: 6px;
+}
+
+/* Borrowed Books Table */
+.user-detail-page .book-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+.user-detail-page .book-table th,
+.user-detail-page .book-table td {
+  border: 1px solid #ddd;
+  padding: 10px 12px;
+  text-align: left;
+}
+.user-detail-page .book-table th {
+  background: #343a40;
+  color: #fff;
+  font-size: 0.95em;
+}
+.user-detail-page .book-table tr:nth-child(even) {
+  background: #f2f2f2;
+}
+.user-detail-page .book-table tr:hover {
+  background: #e9f5ff;
+}
+
+/* Return Button */
+.user-detail-page .book-table button {
+  padding: 6px 12px;
+  background: #28a745;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.9em;
+  transition: background .2s;
+}
+.user-detail-page .book-table button:hover {
+  background: #218838;
+}
+
+/* Borrow New Book Form */
+.user-detail-page form[action="/borrow"] {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+.user-detail-page form[action="/borrow"] label {
+  font-weight: 600;
+  color: #333;
+}
+.user-detail-page form[action="/borrow"] select {
+  flex: 1;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.user-detail-page form[action="/borrow"] button {
+  padding: 8px 16px;
+  background: #007bff;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 0.95em;
+  transition: background .2s;
+}
+.user-detail-page form[action="/borrow"] button:hover {
+  background: #0056b3;
+}
+
+/* Error Text */
+.user-detail-page .error {
+  color: #c00;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+.success-message {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px 16px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+  font-weight: bold;
+}
+.error-title {
+  color: #d9534f;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 10px;
+  margin: 15px 0;
+  border-radius: 4px;
+}

@@ -1,0 +1,15 @@
+<% if (errorMessage) { %>
+    <script>
+      alert("<%= errorMessage %>");
+    </script>
+  <% } %>
+<!-- navigation -->
+<header class="topbar">
+    <h1 class="logo">LibrarySystem</h1>
+    <nav class="topnav">
+      <a href="/"       class="<%= (active==='books') ? 'active' : '' %>">Book Management</a >
+      <a href="/users"  class="<%= (active==='users') ? 'active' : '' %>">User List</a >
+      <a href="/borrowed" class="<%= (active==='borrowed') ? 'active' : '' %>">Borrow Books</a >
+      <a href="/logout" >Logout</a >
+    </nav>
+  </header>

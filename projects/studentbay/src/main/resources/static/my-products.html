@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>我发布的 - StudentBay</title>
+<link rel="stylesheet" href="/css/app.css">
+<script defer src="/js/app.js"></script>
+</head>
+<body data-page="my-products">
+<header id="siteHeader"></header>
+<main class="shell">
+  <div class="page-heading">
+    <div>
+      <span class="eyebrow" style="color:var(--campus)">My listings</span>
+      <h1>我发布的</h1>
+      <p>在卖、草稿与已下架的商品，都在这里管理。</p>
+    </div>
+  </div>
+  <!-- T5.1 智能回复 · 页内常驻面板（Toggle 开关 + 展开编辑区 + 一键应用到全部在卖商品） -->
+  <section class="auto-reply-panel" id="autoReplyPanel" aria-label="智能回复设置">
+    <div class="ar-panel-head">
+      <div class="ar-panel-title">
+        <strong>智能回复</strong>
+        <span class="ar-panel-sub" id="arPanelSub">未开启，买家咨询不会自动回复</span>
+      </div>
+      <label class="switch" title="所有宝贝默认回复">
+        <input type="checkbox" id="arGlobalEnabled" aria-label="所有宝贝默认回复">
+        <span class="switch-track" aria-hidden="true"></span>
+        <span class="switch-text">所有宝贝默认回复</span>
+      </label>
+    </div>
+    <div class="ar-panel-body hidden" id="arGlobalBody">
+      <div class="field">
+        <label for="arGlobalContent">默认回复内容（≤500 字，可插入变量）</label>
+        <textarea id="arGlobalContent" rows="4" maxlength="500" placeholder="例：你好呀，{商品标题}还在哦，{商品价格}，有需要随时问我～"></textarea>
+        <div class="ar-vars">可用变量：<code>{昵称}</code> <code>{商品标题}</code> <code>{商品价格}</code></div>
+        <label class="switch ar-reply-once" title="关闭后，买家追问可再收到一条自动回复">
+          <input type="checkbox" id="arReplyOnce">
+          <span class="switch-track" aria-hidden="true"></span>
+          <span class="switch-text">同一买家对同一商品只自动回复一次</span>
+        </label>
+      </div>
+      <div class="ar-templates">
+        <span>快捷模板：</span>
+        <button class="btn btn-ghost btn-small" type="button" data-template="0">热情问候</button>
+        <button class="btn btn-ghost btn-small" type="button" data-template="1">简洁在售</button>
+        <button class="btn btn-ghost btn-small" type="button" data-template="2">欢迎砍价</button>
+      </div>
+      <div class="ar-preview hidden" id="arGlobalPreview"><span>预览</span><p id="arPreviewText"></p></div>
+      <div class="ar-panel-actions">
+        <label class="ar-overwrite"><input type="checkbox" id="arOverwrite"> 同时覆盖已单独设置的商品</label>
+        <span class="ar-apply-hint">应用后所有在卖商品都会自动回复这条内容</span>
+        <button class="btn btn-outline btn-small" type="button" id="arApplyAll">应用到全部在卖商品</button>
+        <button class="btn btn-primary" type="button" id="arGlobalSave">保存</button>
+      </div>
+    </div>
+  </section>
+  <div class="tabs">
+    <button class="tab active" data-tab="onSale" type="button">在卖 <em id="countOnSale" class="tab-count">0</em></button>
+    <button class="tab" data-tab="draft" type="button">草稿 <em id="countDraft" class="tab-count">0</em></button>
+    <button class="tab" data-tab="offShelf" type="button">已下架 <em id="countOffShelf" class="tab-count">0</em></button>
+  </div>
+  <section id="productList" class="my-product-list"></section>
+</main>
+
+<!-- 单品智能回复设置 -->
+<div id="autoReplyProductModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="arProductTitle">
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3 id="arProductTitle">智能回复 · 商品</h3>
+      <button class="btn btn-ghost btn-small" type="button" data-close-modal>关闭</button>
+    </div>
+    <p class="modal-sub">单品开启后会覆盖全局默认；关闭则继承全局。内容留空表示使用全局默认。</p>
+    <label class="switch ar-product-switch">
+      <input type="checkbox" id="arProductEnabled" aria-label="单品开启">
+      <span class="switch-track" aria-hidden="true"></span>
+      <span class="switch-text">单品开启（关 = 继承全局）</span>
+    </label>
+    <div class="field" id="arProductField">
+      <label>回复内容（留空 = 使用全局默认）</label>
+      <textarea id="arProductText" rows="4" maxlength="500" placeholder="留空则使用全局默认回复"></textarea>
+    </div>
+    <div class="ar-inherit-tip hidden" id="arInheritTip"><span>当前继承全局</span><p id="arInheritText"></p></div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" type="button" id="arProductReset">恢复全局默认</button>
+      <button class="btn btn-primary" type="button" id="arProductSave">保存</button>
+    </div>
+  </div>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

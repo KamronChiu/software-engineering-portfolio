@@ -1,0 +1,43 @@
+flowchart LR
+    Visitor[游客]
+    Buyer[买家]
+    Seller[卖家]
+    Admin[管理员]
+    subgraph StudentBay[StudentBay 系统边界]
+        UC1([注册 / 登录])
+        UC2([浏览与智能搜索商品])
+        UC3([收藏 / 留言 / 咨询])
+        UC4([购物车与多卖家结算])
+        UC5([支付与取消订单])
+        UC6([校园面交与双向取件码])
+        UC7([快递预约与物流])
+        UC8([退款 / 退货 / 平台介入])
+        UC9([双向评价与 Trust Score])
+        UC10([发布与维护商品])
+        UC11([未付款订单改价])
+        UC12([任务金币与骰子寻宝])
+        UC13([用户 / 商品 / 举报治理])
+        UC14([售后审核与执行退款])
+        UC15([经营数据可视化])
+    end
+    Visitor --> UC1
+    Visitor --> UC2
+    Buyer --> UC2
+    Buyer --> UC3
+    Buyer --> UC4
+    Buyer --> UC5
+    Buyer --> UC6
+    Buyer --> UC7
+    Buyer --> UC8
+    Buyer --> UC9
+    Buyer --> UC12
+    Seller --> UC10
+    Seller --> UC3
+    Seller --> UC6
+    Seller --> UC7
+    Seller --> UC8
+    Seller --> UC9
+    Seller --> UC11
+    Admin --> UC13
+    Admin --> UC14
+    Admin --> UC15

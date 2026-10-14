@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="查看 StudentBay 校园闲置商品详情、卖家信息与交易位置。">
+    <title>商品详情 - StudentBay</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script defer src="/js/app.js?v=favorite-fix1"></script>
+</head>
+<body data-page="detail" class="taste-page detail-page">
+<header id="siteHeader"></header>
+<main class="shell detail-shell">
+    <nav class="detail-breadcrumb" aria-label="面包屑" data-reveal>
+        <a href="/">逛校园</a><span>/</span><span>商品详情</span>
+    </nav>
+    <section id="productDetail" class="detail-layout" aria-live="polite">
+        <div class="detail-loading"><div class="detail-loading-image"></div><div class="detail-loading-copy"></div></div>
+    </section>
+
+    <section class="detail-support-grid">
+        <section class="card card-body location-section" data-reveal>
+            <div class="location-preview">
+                <div class="location-pin" aria-hidden="true">LOC</div>
+                <div>
+                    <h2>校内交易位置</h2>
+                    <p id="locationText">校内位置由卖家发布时标注</p>
+                    <small>地图仅展示约定区域，交易前请与卖家再次确认。</small>
+                </div>
+                <button id="showProductMap" class="btn btn-outline" type="button">查看小地图</button>
+            </div>
+            <div id="productMap" class="map map-compact hidden"></div>
+        </section>
+
+        <aside class="detail-assurance" data-reveal>
+            <span>交易提醒</span>
+            <h2>先验货，再确认</h2>
+            <p>当面交易请核对商品状态。快递交易请保留聊天和物流记录。</p>
+        </aside>
+    </section>
+
+    <section id="paramsSection" class="card card-body param-section hidden" data-reveal>
+        <div class="section-title">
+            <div><h2>商品参数</h2><p>卖家填写的规格信息，购买前请再次确认</p></div>
+        </div>
+        <div id="paramsList" class="params-grid"></div>
+    </section>
+
+    <section class="card card-body recommend-section" data-reveal>
+        <div class="section-title">
+            <div><h2>为你推荐</h2><p>同分类里的相似好物</p></div>
+        </div>
+        <div id="recommendGrid" class="product-grid"></div>
+    </section>
+
+    <section class="card card-body comment-section" data-reveal>
+        <div class="section-title comment-title">
+            <div><h2>大家都在问</h2><p>公开交流商品细节，手机号等隐私信息请使用私聊。</p></div>
+            <span id="commentCount">0 条留言</span>
+        </div>
+        <div id="commentFormHost"></div>
+        <div id="commentList" class="comment-list"></div>
+    </section>
+</main>
+<footer class="footer taste-footer"><strong>StudentBay</strong><span>校内定位仅用于帮助双方约定交易地点</span></footer>
+<div id="stickerTrail" class="sticker-trail" aria-hidden="true"></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<div id="reportModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="reportTitle">
+    <div class="modal-card">
+        <div class="modal-head"><h3 id="reportTitle">举报商品</h3><button class="icon-btn" type="button" data-close-modal aria-label="关闭">×</button></div>
+        <form id="reportForm" class="field report-form">
+            <div class="field"><label for="reportReason">举报原因</label><select id="reportReason" class="select"><option>疑似假冒或违禁商品</option><option>商品信息与实际不符</option><option>价格或交易行为异常</option><option>其他问题</option></select></div>
+            <div class="field"><label for="reportDetail">补充说明</label><textarea id="reportDetail" class="textarea" placeholder="请描述你发现的问题"></textarea></div>
+            <button class="btn btn-danger" type="submit">提交举报</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>

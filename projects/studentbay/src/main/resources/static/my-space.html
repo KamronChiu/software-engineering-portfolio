@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="我的空间：发布的宝贝、评价与动态。">
+    <title>我的空间 - StudentBay</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body class="taste-page my-space-page" data-page="my-space">
+<header id="siteHeader"></header>
+<main class="shell marketplace">
+    <div class="page-heading marketplace-heading">
+        <div>
+            <span class="eyebrow">My space</span>
+            <h1>我的空间</h1>
+            <p>我发布的宝贝、收到的评价与最近的动态。</p>
+        </div>
+    </div>
+
+    <section class="card space-hero">
+        <span id="spaceAvatar" class="avatar space-avatar"></span>
+        <div>
+            <h2 id="spaceName" class="space-name"></h2>
+            <p id="spaceMeta" class="space-meta"></p>
+            <div id="spaceBadges"></div>
+        </div>
+    </section>
+
+    <section class="card space-credit" id="spaceCredit" aria-label="我的信用">
+        <div class="credit-head">
+            <div>
+                <span class="eyebrow">Credit</span>
+                <h2>我的信用</h2>
+            </div>
+            <p>买家信用与卖家信用分别评定，点击卡片查看构成明细与评定规则。</p>
+        </div>
+        <div class="credit-cards">
+            <button type="button" class="credit-card" data-credit="buyer" aria-expanded="false">
+                <span class="credit-card-label">买家信用</span>
+                <span class="credit-score" id="buyerCreditScore">--</span>
+                <span class="credit-bar"><i id="buyerCreditBar" style="width:0%"></i></span>
+                <span class="credit-level" id="buyerCreditLevel">计算中…</span>
+            </button>
+            <button type="button" class="credit-card" data-credit="seller" aria-expanded="false">
+                <span class="credit-card-label">卖家信用</span>
+                <span class="credit-score" id="sellerCreditScore">--</span>
+                <span class="credit-bar"><i id="sellerCreditBar" style="width:0%"></i></span>
+                <span class="credit-level" id="sellerCreditLevel">计算中…</span>
+            </button>
+        </div>
+        <div id="creditDetail" class="credit-detail" hidden>
+            <div class="credit-detail-grid">
+                <div class="credit-metric"><span class="metric-num" id="cSold">0</span><span class="metric-label">卖出商品</span></div>
+                <div class="credit-metric"><span class="metric-num" id="cBought">0</span><span class="metric-label">买进商品</span></div>
+                <div class="credit-metric"><span class="metric-num" id="cSellerGood">0</span><span class="metric-label">卖家好评</span></div>
+                <div class="credit-metric"><span class="metric-num" id="cBuyerGood">0</span><span class="metric-label">买家好评</span></div>
+                <div class="credit-metric"><span class="metric-num" id="cReported">0</span><span class="metric-label">商品被举报</span></div>
+            </div>
+            <div class="credit-rule" id="creditRule"></div>
+            <button type="button" id="creditClose" class="credit-close">收起明细</button>
+        </div>
+    </section>
+
+    <nav class="space-tabs" role="tablist" aria-label="空间内容切换">
+        <button class="space-tab active" type="button" role="tab" aria-selected="true" data-pane="spaceProducts">宝贝</button>
+        <button class="space-tab" type="button" role="tab" aria-selected="false" data-pane="spaceReviews">评价</button>
+        <button class="space-tab" type="button" role="tab" aria-selected="false" data-pane="spaceActivity">动态</button>
+    </nav>
+
+    <section id="spaceProducts" class="space-pane active" role="tabpanel">
+        <div class="pane-heading">
+            <div>
+                <span class="eyebrow">Listings</span>
+                <h2>我发布的宝贝</h2>
+                <p>无论是否已卖出，都在这里留档；已卖出的卡片会置灰。</p>
+            </div>
+        </div>
+        <div id="spaceProductGrid" class="product-grid"></div>
+    </section>
+
+    <section id="spaceReviews" class="space-pane" role="tabpanel" hidden>
+        <div class="review-sub-tabs">
+            <button class="review-sub-tab active" type="button" data-review-type="BUYER_REVIEWS_SELLER">买家评价我</button>
+            <button class="review-sub-tab" type="button" data-review-type="SELLER_REVIEWS_BUYER">卖家评价我</button>
+        </div>
+        <div id="reviewSummary" class="review-summary"></div>
+        <div id="reviewList" class="review-list"></div>
+    </section>
+
+    <section id="spaceActivity" class="space-pane" role="tabpanel" hidden>
+        <div class="pane-heading">
+            <div>
+                <span class="eyebrow">Timeline</span>
+                <h2>我的动态</h2>
+                <p>上架新宝贝、宝贝被买走的重要时刻。</p>
+            </div>
+        </div>
+        <div id="spaceTimeline" class="timeline"></div>
+    </section>
+</main>
+<div id="toast" class="toast"></div>
+</body>
+</html>

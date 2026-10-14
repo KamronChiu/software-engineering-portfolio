@@ -1,0 +1,33 @@
+Shift,Truck,Home Area,Segments,Routes,Total Truck Time,Spare Capacity,Shift Completion Time,Cross-Area Support Used,Feasible Within 180 Mins
+1,A-Truck-1,A,"Home Area A: A1 x1, A4 x1, A5 x1 (88 mins)",HQ -> A1 -> A4 -> A5 -> HQ,88,92,100,No,Yes
+1,A-Truck-2,A,"Home Area A: A2 x1, A3 x1, A6 x1 (100 mins)",HQ -> A2 -> A3 -> A6 -> HQ,100,80,100,No,Yes
+1,B-Truck-1,B,"Home Area B: B2 x1, B3 x1, B6 x1 (98 mins)",HQ -> B2 -> B3 -> B6 -> HQ,98,82,100,No,Yes
+1,B-Truck-2,B,Home Area B: B1 x1 (46 mins) | Support Area D: D1 x1 (50 mins),HQ -> B1 -> HQ | HQ -> D1 -> HQ,96,84,100,Yes,Yes
+1,C-Truck-1,C,"Home Area C: C1 x1, C3 x1, C5 x1 (95 mins)",HQ -> C1 -> C3 -> C5 -> HQ,95,85,100,No,Yes
+1,C-Truck-2,C,Home Area C: C6 x1 (68 mins),HQ -> C6 -> HQ,68,112,100,No,Yes
+1,D-Truck-1,D,"Home Area D: D1 x1, D2 x1, D4 x1 (94 mins)",HQ -> D1 -> D2 -> D4 -> HQ,94,86,100,No,Yes
+1,D-Truck-2,D,"Home Area D: D3 x2, D6 x1 (94 mins)",HQ -> D3 -> D6 -> HQ,94,86,100,No,Yes
+2,A-Truck-1,A,"Home Area A: A2 x1, A6 x1 (90 mins)",HQ -> A2 -> A6 -> HQ,90,90,98,No,Yes
+2,A-Truck-2,A,"Home Area A: A4 x1, A5 x1 (78 mins)",HQ -> A4 -> A5 -> HQ,78,102,98,No,Yes
+2,B-Truck-1,B,"Home Area B: B1 x1, B2 x1, B6 x1 (98 mins)",HQ -> B1 -> B2 -> B6 -> HQ,98,82,98,No,Yes
+2,B-Truck-2,B,Home Area B: B5 x1 (78 mins),HQ -> B5 -> HQ,78,102,98,No,Yes
+2,C-Truck-1,C,"Home Area C: C2 x1, C3 x1, C4 x1 (95 mins)",HQ -> C2 -> C3 -> C4 -> HQ,95,85,98,No,Yes
+2,C-Truck-2,C,Home Area C: C5 x1 (58 mins),HQ -> C5 -> HQ,58,122,98,No,Yes
+2,D-Truck-1,D,"Home Area D: D4 x1, D5 x1 (98 mins)",HQ -> D4 -> D5 -> HQ,98,82,98,No,Yes
+2,D-Truck-2,D,"Home Area D: D2 x1, D3 x1, D6 x1 (95 mins)",HQ -> D2 -> D6 -> D3 -> HQ,95,85,98,No,Yes
+3,A-Truck-1,A,"Home Area A: A2 x1, A4 x1, A5 x1 (95 mins)",HQ -> A2 -> A4 -> A5 -> HQ,95,85,104,No,Yes
+3,A-Truck-2,A,Home Area A: A6 x1 (80 mins),HQ -> A6 -> HQ,80,100,104,No,Yes
+3,B-Truck-1,B,"Home Area B: B4 x2, B5 x1 (98 mins)",HQ -> B4 -> B5 -> HQ,98,82,104,No,Yes
+3,B-Truck-2,B,"Home Area B: B2 x1, B3 x1 (78 mins)",HQ -> B2 -> B3 -> HQ,78,102,104,No,Yes
+3,C-Truck-1,C,"Home Area C: C1 x1, C2 x2, C3 x1 (100 mins)",HQ -> C1 -> C2 -> C3 -> HQ,100,80,104,No,Yes
+3,C-Truck-2,C,Home Area C: C6 x1 (68 mins),HQ -> C6 -> HQ,68,112,104,No,Yes
+3,D-Truck-1,D,"Home Area D: D1 x2, D2 x1, D4 x1 (104 mins)",HQ -> D1 -> D2 -> D4 -> HQ,104,76,104,No,Yes
+3,D-Truck-2,D,"Home Area D: D3 x1, D5 x1, D6 x1 (101 mins)",HQ -> D3 -> D6 -> D5 -> HQ,101,79,104,No,Yes
+4,A-Truck-1,A,"Home Area A: A2 x1, A3 x1, A5 x1 (101 mins)",HQ -> A2 -> A3 -> A5 -> HQ,101,79,108,No,Yes
+4,A-Truck-2,A,Home Area A: A1 x1 (44 mins) | Support Area D: D1 x2 (60 mins),HQ -> A1 -> HQ | HQ -> D1 -> HQ,104,76,108,Yes,Yes
+4,B-Truck-1,B,"Home Area B: B1 x1, B2 x1, B3 x1, B6 x1 (108 mins)",HQ -> B1 -> B2 -> B3 -> B6 -> HQ,108,72,108,No,Yes
+4,B-Truck-2,B,Home Area B: B5 x2 (88 mins),HQ -> B5 -> HQ,88,92,108,No,Yes
+4,C-Truck-1,C,"Home Area C: C2 x1, C3 x1, C4 x1 (95 mins)",HQ -> C2 -> C3 -> C4 -> HQ,95,85,108,No,Yes
+4,C-Truck-2,C,Home Area C: C5 x1 (58 mins) | Support Area A: A1 x1 (44 mins),HQ -> C5 -> HQ | HQ -> A1 -> HQ,102,78,108,Yes,Yes
+4,D-Truck-1,D,"Home Area D: D4 x1, D5 x2 (108 mins)",HQ -> D4 -> D5 -> HQ,108,72,108,No,Yes
+4,D-Truck-2,D,"Home Area D: D2 x1, D3 x1, D6 x2 (105 mins)",HQ -> D2 -> D6 -> D3 -> HQ,105,75,108,No,Yes

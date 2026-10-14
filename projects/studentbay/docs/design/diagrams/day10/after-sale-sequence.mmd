@@ -1,0 +1,22 @@
+sequenceDiagram
+    actor B as 买家
+    actor S as 卖家
+    actor A as 管理员
+    participant AS as AfterSaleService
+    participant Chat as ChatService
+    participant DB as MySQL
+    B->>AS: 提交退款/退货申请
+    AS->>DB: 锁定订单，校验付款与 7 天期限
+    AS->>DB: 创建唯一售后工单，订单进入 RETURN_REQUESTED
+    AS->>Chat: 写入订单事件消息
+    Chat->>DB: 卖家未读数 +1
+    S->>AS: 同意或拒绝并填写意见
+    AS->>Chat: 通知买家审核结果
+    alt 双方无法达成一致
+        B->>AS: 申请平台介入
+        AS->>DB: 工单进入 INTERVENTION
+        A->>AS: 审核退款
+    end
+    A->>AS: 执行退款
+    AS->>DB: 支付状态 REFUNDED，商品恢复 AVAILABLE
+    AS->>Chat: 通知买卖双方处理完成

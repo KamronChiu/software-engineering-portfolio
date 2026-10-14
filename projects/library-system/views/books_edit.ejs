@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Edit Book #<%= book.id %>
+  </title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="edit-book-page">
+  <%- include('partials/navbar', { active: 'books' }) %>
+
+    <div class="container form-container">
+      <h1>Edit Book #<%= book.id %>
+      </h1>
+
+      <% if (errors && errors.length) { %>
+        <ul class="error-list">
+          <% errors.forEach(err=> { %>
+            <li>
+              <%= err.msg %>
+            </li>
+            <% }) %>
+        </ul>
+        <% } %>
+
+          <form action="/books/<%= book.id %>/edit" method="post" novalidate>
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input id="title" name="title" type="text" value="<%= book.title %>" required maxlength="200"
+                placeholder="Enter book title">
+            </div>
+            <!-- Author (manual entry) -->
+            <div class="form-group">
+              <label for="author">Author Name</label>
+              <input id="author" name="author" type="text" value="<%= book.author %>" required maxlength="100"
+                placeholder="Enter author name">
+            </div>
+
+            <div class="form-group">
+              <label for="availability">Availability</label>
+              <input id="availability" name="availability" type="number" min="0" value="<%= book.availability %>"
+                required>
+            </div>
+            <button type="submit" class="btn">Update Book</button>
+          </form>
+          <p class="back-link"><a href="/">← Back to Book List</a></p>
+    </div>
+</body>
+
+</html>

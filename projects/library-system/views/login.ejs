@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Login</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="login-page">
+  <div class="login-container">
+    <h1>Login</h1>
+<!-- login error -->
+    <% if (errors && errors.length) { %>
+      <ul class="error-list">
+        <% errors.forEach(err=> { %>
+          <li>
+            <%= err.msg %>
+          </li>
+          <% }) %>
+      </ul>
+      <% } %>
+
+        <form action="/login" method="POST" novalidate>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <!-- username validation -->
+            <input id="username" name="username" type="text" value="<%= old.username||'' %>" required
+              pattern="[A-Za-z\s]+" title="Letters and spaces only">
+          </div>
+
+          <div class="form-group password-group">
+            <label for="password">Password</label>
+            <!-- password validation -->
+            <input id="password" name="password" type="password" required minlength="6" maxlength="20" pattern=".{6,}"
+              title="Password must be between 6 and 20 characters">
+            <button type="button" class="toggle-password" aria-label="Toggle password visibility">
+              Show
+            </button>
+          </div>
+
+          <button type="submit" class="btn">Login</button>
+        </form>
+  </div>
+
+  <script src="/scripts.js"></script>
+</body>
+
+</html>

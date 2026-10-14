@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="登录 StudentBay，开始安全、可信的校园闲置交易。">
+    <title>登录 StudentBay</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-page="login" class="taste-page login-body">
+<main class="login-page">
+    <section class="login-scene" aria-labelledby="loginSceneTitle">
+        <a class="brand login-brand" href="/"><span class="brand-mark">SB</span>StudentBay</a>
+        <div class="login-scene-copy" data-reveal>
+            <span class="eyebrow">同校好物，放心流转</span>
+            <h1 id="loginSceneTitle">离你最近的<br>校园市场</h1>
+            <p>完成校园身份验证，与身边同学聊清楚、看明白，再安心成交。</p>
+        </div>
+        <div class="login-proof" aria-label="平台特色" data-reveal>
+            <span>校园认证</span><span>当面验货</span><span>物流可追踪</span>
+        </div>
+        <div class="scene-sticker scene-sticker-price" aria-hidden="true"><b>¥38</b><small>教材好价</small></div>
+        <div class="scene-sticker scene-sticker-verified" aria-hidden="true"><b>CHECKED</b><small>已认证</small></div>
+        <div class="scene-orbit" aria-hidden="true"></div>
+    </section>
+
+    <section class="login-box">
+        <div class="login-card" data-reveal>
+            <div class="auth-viewport">
+                <div class="auth-track" id="authTrack">
+                    <section class="auth-panel auth-panel-login" aria-label="登录 StudentBay">
+                        <div class="login-heading">
+                            <span>欢迎回来</span>
+                            <h2>继续逛校园</h2>
+                            <p>使用校园账号登录 StudentBay</p>
+                        </div>
+                        <form id="loginForm" class="login-form">
+                            <div class="field">
+                                <label for="email">校园邮箱</label>
+                                <input class="input" id="email" name="email" type="email" value="lin@campus.edu" autocomplete="username" pattern="[^@\s]+@[^@\s]+\.(edu|local)" title="仅支持 @xxx.edu 学生邮箱或 @xxx.local 管理员邮箱" required>
+                                <small class="field-hint">仅限 @xxx.edu 学生邮箱或 @xxx.local 管理员邮箱</small>
+                            </div>
+                            <div class="field">
+                                <label for="password">密码</label>
+                                <input class="input" id="password" name="password" type="password" value="123456" autocomplete="current-password" required>
+                            </div>
+                            <button class="btn btn-primary btn-block login-submit" type="submit">登录</button>
+                        </form>
+                        <details class="demo-accounts">
+                            <summary>查看演示账号</summary>
+                            <div><strong>买家</strong><span>lin@campus.edu</span></div>
+                            <div><strong>卖家</strong><span>chen@campus.edu</span></div>
+                            <div><strong>管理员</strong><span>admin@studentbay.local</span></div>
+                            <p>演示账号密码均为 123456</p>
+                        </details>
+                        <div class="auth-panel-footer">
+                            <a class="login-back" href="/">先看看校园好物</a>
+                            <button class="auth-switch" id="toRegisterBtn" type="button" aria-controls="authTrack">没有账号？去注册</button>
+                        </div>
+                    </section>
+
+                    <section class="auth-panel auth-panel-register" aria-label="注册 StudentBay">
+                        <div class="login-heading">
+                            <span>加入校园市集</span>
+                            <h2>创建新账号</h2>
+                            <p>注册后即可发布闲置、下单交易</p>
+                        </div>
+                        <form id="registerForm" class="login-form">
+                            <div class="field">
+                                <label for="regName">昵称</label>
+                                <input class="input" id="regName" name="displayName" type="text" minlength="2" maxlength="30" autocomplete="nickname" placeholder="同学们怎么称呼你" required>
+                            </div>
+                            <div class="field">
+                                <label for="regEmail">校园邮箱</label>
+                                <input class="input" id="regEmail" name="email" type="email" autocomplete="username" placeholder="name@campus.edu" pattern="[^@\s]+@[^@\s]+\.(edu|local)" title="普通用户需 @xxx.edu 邮箱，管理员需 @xxx.local 邮箱" required>
+                                <small class="field-hint" id="regEmailHint">普通用户：@xxx.edu　管理员：@xxx.local</small>
+                            </div>
+                            <div class="field">
+                                <label for="regPassword">密码</label>
+                                <input class="input" id="regPassword" name="password" type="password" minlength="6" maxlength="64" autocomplete="new-password" placeholder="至少 6 位" required>
+                            </div>
+                            <div class="field">
+                                <label for="regConfirm">确认密码</label>
+                                <input class="input" id="regConfirm" type="password" autocomplete="new-password" placeholder="再输入一次密码" required>
+                            </div>
+                            <div class="field">
+                                <label for="regRole">注册身份</label>
+                                <select class="input" id="regRole" name="role">
+                                    <option value="USER">普通用户</option>
+                                    <option value="ADMIN">管理员</option>
+                                </select>
+                                <small class="field-hint">选择管理员身份后，邮箱需使用 @xxx.local 后缀</small>
+                            </div>
+                            <button class="btn btn-primary btn-block login-submit" type="submit">注册并登录</button>
+                        </form>
+                        <div class="auth-panel-footer">
+                            <button class="auth-switch" id="toLoginBtn" type="button" aria-controls="authTrack">已有账号？去登录</button>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="stickerTrail" class="sticker-trail" aria-hidden="true"></div>
+</main>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

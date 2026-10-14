@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Library Management</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <% var active='books' ; %>
+    <%- include('partials/navbar', { active: active }) %>
+
+      <div class="container">
+        <% if (errorMessage) { %>
+          <p class="error-message"><%= errorMessage %></p>
+          <% } %>
+          <% if (successMessage) { %>
+            <p class="success-message"><%= successMessage %></p>
+          <% } %>
+
+            <!-- search bar -->
+            <div class="toolbar">
+              <form class="search-bar" action="/" method="GET">
+                <input type="text" id="searchInput" name="search" placeholder="Search by title or author"
+                  value="<%= search %>" autocomplete="off">
+                <button type="submit">Search</button>
+                <% if (search) { %>
+                  <a href="/"><button type="button">Return</button></a>
+                  <% } %>
+              </form>
+              <!-- Real-time filtering on the client side -->
+              <div class="filter-live">
+                <label for="filterInput">Filter Books:</label>
+                <input type="text" id="filterInput" placeholder="Type keyword to filter...">
+              </div>
+              <div class="action-buttons">
+                <a href="/books/new"><button type="button">+ Add Book</button></a>
+                <form action="/seed" method="post" style="display:inline">
+                  <button type="submit" onclick="return confirm('Reset sample data?')">Seed Data</button>
+                </form>
+              </div>
+            </div>
+
+
+            <p class="stats">Total Books: <%= total %>
+            </p>
+
+            <!-- Sorting & filtering -->
+            <form class="filter-form" method="get">
+              <label>
+                <i class="fas fa-user-pen"></i>Author:
+                <select name="author">
+                  <option value="">All</option>
+                  <% authors.forEach(a=> { %>
+                    <option value="<%= a.id %>" <%=a.id===currentAuthor?'selected':'' %>><%= a.name %>
+                    </option>
+                    <% }) %>
+                </select>
+              </label>
+
+              <label>
+                <i class="fas fa-sort-alpha-down"></i>Sort by:
+                <select name="sort">
+                  <option value="title" <%=currentSort==='title' ?'selected':'' %>>Title</option>
+                  <option value="availability" <%=currentSort==='availability' ?'selected':'' %>>Avail.</option>
+                </select>
+              </label>
+
+              <label>
+                <i class="fas fa-list-ol"></i>Per page:
+                <select name="limit">
+                  <% [5,10,20].forEach(n=>{ %>
+                    <option value="<%=n%>" <%=limit===n?'selected':'' %>><%=n%>
+                    </option>
+                    <% }) %>
+                </select>
+              </label>
+
+              <button type="submit"><i class="fas fa-filter"></i>Apply</button>
+            </form>
+
+            <% if (search) { %>
+              <h3>Search Results for "<%= search %>":</h3>
+              <% } %>
+
+                <!-- List of books -->
+                <table class="book-table">
+                  <thead>
+                    <tr>
+                      <th>ID</th>
+                      <th>Title</th>
+                      <th>Author</th>
+                      <th>Status</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="book-tbody">
+                    <% if (books.length===0) { %>
+                      <tr>
+                        <td colspan="5" class="no-data">No books found.</td>
+                      </tr>
+                      <% } else { %>
+                        <% books.forEach(b=>{ %>
+                          <tr>
+                            <td><%=b.id%></td>
+                            <td><%=b.title%></td>
+                            <td><%=b.author%></td>
+                            <td>
+                              <% if (b.availability>0) { %>
+                                <span class="status available">Available (<%=b.availability%>)</span>
+                                <% } else { %>
+                                  <span class="status checked-out">Checked Out</span>
+                                  <% } %>
+                            </td>
+                            <!-- edit or delete: -->
+                            <td class="actions">
+                              <a href="/books/<%=b.id%>/edit"><i class="fas fa-edit"></i> Edit</a>
+                              <form action="/books/<%=b.id%>/delete" method="POST" style="display:inline">
+                                <button onclick="return confirm('Delete this book?')">
+                                  <i class="fas fa-trash-alt"></i> Delete
+                                </button>
+                              </form>
+                            </td>
+                          </tr>
+                          <% }) %>
+                            <% } %>
+                  </tbody>
+                </table>
+      </div>
+      <!-- Pagination -->
+      <ul class="pagination">
+        <% if (page > 1) { %>
+          <li class="prev">
+            <a href="?page=<%= page - 1 %>&author=<%= currentAuthor %>&sort=<%= currentSort %>&limit=<%= limit %>&search=<%= search %>">Pre</a >
+          </li>
+        <% } %>
+      
+        <% for (let p = 1; p <= pages; p++) { %>
+          <li class="<%= p === page ? 'active' : '' %>">
+            <% if (p === page) { %>
+              <span><%= p %></span>
+            <% } else { %>
+              <a href="?page=<%= p %>&author=<%= currentAuthor %>&sort=<%= currentSort %>&limit=<%= limit %>&search=<%= search %>"><%= p %></a >
+            <% } %>
+          </li>
+        <% } %>
+      
+        <% if (page < pages) { %>
+          <li class="next">
+            <a href="?page=<%= page + 1 %>&author=<%= currentAuthor %>&sort=<%= currentSort %>&limit=<%= limit %>&search=<%= search %>">Next</a >
+          </li>
+        <% } %>
+      </ul>
+
+      <script src="/scripts.js"></script>
+</body>
+
+</html>

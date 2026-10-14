@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>购物车 - StudentBay</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-page="cart">
+<header id="siteHeader"></header>
+<main class="shell">
+    <div class="page-heading">
+        <div><h1>购物车</h1><p>每件闲置商品库存唯一，勾选后统一提交订单。</p></div>
+        <a href="/" class="btn btn-outline">继续逛校园</a>
+    </div>
+    <div class="cart-toolbar card">
+        <label><input id="selectAllCart" type="checkbox" checked> 全选</label>
+        <button id="deleteSelectedCart" class="text-button danger-text" type="button">删除所选</button>
+        <span id="cartAvailabilityHint">在售商品已全部选中</span>
+    </div>
+    <div class="checkout-layout cart-layout">
+        <section id="cartList" class="card cart-list"></section>
+        <aside class="cart-side">
+            <section class="card card-body summary">
+                <h2 style="margin-top:0">结算明细</h2>
+                <div class="summary-row"><span>已选商品</span><strong id="selectedCount">0 件</strong></div>
+                <div class="summary-row summary-total"><span>商品合计</span><strong id="cartTotal">¥0.00</strong></div>
+                <button id="checkoutButton" class="btn btn-sun btn-block" style="margin-top:22px">去结算</button>
+            </section>
+            <section id="bulkReward" class="card bulk-reward"></section>
+            <section class="card cart-promise">
+                <strong>校园闲置交易提示</strong>
+                <p>付款前可查看同款价格；当面交易请现场验货，快递交易请保留开箱记录。</p>
+            </section>
+        </aside>
+    </div>
+</main>
+<div id="toast" class="toast"></div>
+</body>
+</html>

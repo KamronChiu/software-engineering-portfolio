@@ -1,0 +1,5 @@
+Shift,Input Delivery Rows,Rows Covered Exactly Once,All Trucks Within 180 Mins,Completion Time,Max Truck Time,No Feasible Solution Below Final Time,Policy
+1,21,Yes,Yes,100,100,Yes,individual deliveries; same-sector deliveries may split across trucks
+2,17,Yes,Yes,98,98,Yes,individual deliveries; same-sector deliveries may split across trucks
+3,21,Yes,Yes,104,104,Yes,individual deliveries; same-sector deliveries may split across trucks
+4,24,Yes,Yes,108,108,Yes,individual deliveries; same-sector deliveries may split across trucks

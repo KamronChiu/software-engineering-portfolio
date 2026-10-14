@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1700" height="980" viewBox="0 0 1700 980" role="img" aria-labelledby="title desc">
+  <title id="title">下单拆单与幂等支付时序图</title><desc id="desc">买家从结算到服务端拆单、锁定商品、支付验签和成功反馈的交互顺序。</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f8f9f5"/><stop offset="1" stop-color="#e8f2ec"/></linearGradient><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10z" fill="#47695e"/></marker><marker id="ar" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M10 0 0 5 10 10z" fill="#47695e"/></marker></defs>
+  <rect width="1700" height="980" rx="32" fill="url(#bg)"/><text x="65" y="70" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="38" font-weight="800" fill="#10251f">下单、拆单与幂等支付时序图</text><text x="65" y="107" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="18" fill="#64736d">同一个幂等键只产生一次有效支付结果</text>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif" text-anchor="middle" font-size="18" font-weight="800"><g fill="#195c49"><rect x="45" y="145" width="190" height="62" rx="16"/><rect x="330" y="145" width="220" height="62" rx="16"/><rect x="645" y="145" width="230" height="62" rx="16"/><rect x="970" y="145" width="210" height="62" rx="16"/><rect x="1275" y="145" width="160" height="62" rx="16"/><rect x="1510" y="145" width="150" height="62" rx="16"/></g><g fill="#efffd0"><text x="140" y="184">买家</text><text x="440" y="184">结算 / 支付页</text><text x="760" y="184">OrderController</text><text x="1075" y="184">OrderService</text><text x="1355" y="184">MySQL</text><text x="1585" y="184">支付渠道</text></g></g>
+  <g stroke="#8fa49a" stroke-width="2" stroke-dasharray="9 8"><path d="M140 207V925"/><path d="M440 207V925"/><path d="M760 207V925"/><path d="M1075 207V925"/><path d="M1355 207V925"/><path d="M1585 207V925"/></g>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="16" fill="#173a30" stroke="#47695e" stroke-width="2.3" marker-end="url(#a)">
+    <path d="M140 265H440"/><text x="290" y="252" stroke="none" text-anchor="middle">1. 勾选多个商品，提交结算</text>
+    <path d="M440 335H760"/><text x="600" y="322" stroke="none" text-anchor="middle">2. POST /api/order/checkout</text>
+    <path d="M760 405H1075"/><text x="917" y="392" stroke="none" text-anchor="middle">3. checkout(userId, cartItemIds)</text>
+    <path d="M1075 475H1355"/><text x="1215" y="462" stroke="none" text-anchor="middle">4. 锁定并校验 AVAILABLE 商品</text>
+    <path d="M1075 535H1355"/><text x="1215" y="522" stroke="none" text-anchor="middle">5. 按 sellerId 建子订单，商品置 RESERVED</text>
+    <path d="M140 625H440"/><text x="290" y="612" stroke="none" text-anchor="middle">6. 点击支付</text>
+    <path d="M440 695H760"/><text x="600" y="682" stroke="none" text-anchor="middle">7. 支付请求 + idempotencyKey</text>
+    <path d="M760 755H1075"/><text x="917" y="742" stroke="none" text-anchor="middle">8. pay(orderId, userId, key)</text>
+    <path d="M1075 815H1355"/><text x="1215" y="802" stroke="none" text-anchor="middle">9. 行锁、金额与状态校验</text>
+    <path d="M1075 870H1585"/><text x="1330" y="857" stroke="none" text-anchor="middle">10. 发起沙箱 / 模拟支付并验签</text>
+  </g>
+  <g font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="16" fill="#195c49" stroke="#195c49" stroke-width="2" stroke-dasharray="8 6" marker-end="url(#ar)"><path d="M1355 585H440"/><text x="900" y="572" stroke="none" text-anchor="middle">返回多张待付款订单</text><path d="M1585 915H440"/><text x="1010" y="902" stroke="none" text-anchor="middle">PAID：Processing → ✓ Payment successful</text></g>
+  <rect x="1000" y="650" width="440" height="286" rx="18" fill="#c9f26a" opacity=".13" stroke="#8cab43" stroke-width="2"/><text x="1024" y="681" font-family="PingFang SC,Microsoft YaHei,sans-serif" font-size="16" font-weight="800" fill="#49611f">事务与幂等保护区</text>
+</svg>

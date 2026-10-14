@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>商品咨询 - StudentBay</title>
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="/js/app.js?v=day9"></script>
+</head>
+<body class="taste-page messages-page" data-page="messages">
+<header id="siteHeader"></header>
+<main class="chat-shell">
+    <div class="chat-page-heading">
+        <div>
+            <span class="eyebrow">Campus conversations</span>
+            <h1>商品咨询</h1>
+            <p>商品、订单与聊天保持在同一条交易线上。</p>
+        </div>
+        <div class="tabs chat-box-tabs" aria-label="会话分类">
+            <button class="tab active" data-box="BUYER">我咨询的商品</button>
+            <button class="tab" data-box="SELLER">别人咨询我的商品</button>
+        </div>
+    </div>
+    <section class="messages-layout" aria-label="商品咨询工作台">
+        <aside class="conversation-rail">
+            <div class="conversation-tools">
+                <label for="conversationSearch">查找会话</label>
+                <input id="conversationSearch" class="input" type="search" placeholder="商品或用户名">
+            </div>
+            <div id="conversationList" class="conversation-list"></div>
+        </aside>
+        <div class="chat-panel">
+            <div id="chatHead" class="chat-head">
+                <span class="chat-avatar">SB</span>
+                <div><strong>选择一个商品会话</strong><small>消息和交易状态会显示在这里</small></div>
+            </div>
+            <div id="chatProductBar" class="chat-product-bar">
+                <p>选择会话后，可查看对应商品链接和订单状态。</p>
+            </div>
+            <div id="chatBody" class="chat-body"><div class="empty">从左侧选择会话开始沟通</div></div>
+            <div id="chatAutoReplyTip" class="chat-ar-tip hidden"><span>✉</span>卖家开启了自动回复，可直接提问～</div>
+            <form id="chatForm" class="chat-form">
+                <input id="messageInput" class="input" maxlength="1000" placeholder="询问成色、配件或交易时间" disabled>
+                <button class="btn btn-primary" disabled>发送</button>
+            </form>
+        </div>
+        <aside id="chatContext" class="chat-context">
+            <div class="chat-context-empty"><span>交易</span><strong>会话上下文</strong><p>选择会话后，这里会显示商品价格、订单金额和可用操作。</p></div>
+        </aside>
+    </section>
+</main>
+<div id="toast" class="toast"></div>
+</body>
+</html>

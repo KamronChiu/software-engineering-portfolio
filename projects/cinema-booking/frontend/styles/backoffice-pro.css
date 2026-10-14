@@ -1,0 +1,1192 @@
+:root {
+    --bo-bg: #050814;
+    --bo-panel: rgba(9, 14, 30, 0.90);
+    --bo-panel-soft: rgba(14, 21, 42, 0.82);
+    --bo-panel-strong: rgba(5, 9, 20, 0.96);
+    --bo-border: rgba(214, 170, 66, 0.26);
+    --bo-border-soft: rgba(148, 163, 184, 0.18);
+    --bo-gold: #e6c356;
+    --bo-gold-2: #b88a2c;
+    --bo-text: #f8fafc;
+    --bo-muted: #a3adbf;
+    --bo-blue: #38bdf8;
+    --bo-green: #34d399;
+    --bo-red: #fb7185;
+    --bo-shadow: 0 26px 70px rgba(0, 0, 0, 0.42);
+}
+
+.audit-log-pro-page,
+.cancellation-pro-page,
+.cancellation-status-pro-page,
+.refund-history-pro-page,
+.email-management-pro-page,
+.batch-cancellation-pro-page {
+    min-height: 100vh !important;
+    color: var(--bo-text) !important;
+    background:
+            radial-gradient(circle at 12% 8%, rgba(53, 65, 160, 0.24), transparent 35%),
+            radial-gradient(circle at 82% 0%, rgba(214, 170, 66, 0.16), transparent 33%),
+            linear-gradient(135deg, #050814 0%, #070c1a 44%, #141414 100%) !important;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.audit-log-pro-page::before,
+.cancellation-pro-page::before,
+.cancellation-status-pro-page::before,
+.refund-history-pro-page::before,
+.email-management-pro-page::before,
+.batch-cancellation-pro-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+            linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 72px 72px;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(0,0,0,0.2));
+    z-index: 0;
+}
+
+.audit-log-pro-page > *,
+.cancellation-pro-page > *,
+.cancellation-status-pro-page > *,
+.refund-history-pro-page > *,
+.email-management-pro-page > *,
+.batch-cancellation-pro-page > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* kill old white blocks without changing Java logic */
+.audit-log-pro-page [style*="background: white"],
+.cancellation-pro-page [style*="background: white"],
+.cancellation-status-pro-page [style*="background: white"],
+.refund-history-pro-page [style*="background: white"],
+.email-management-pro-page [style*="background: white"],
+.batch-cancellation-pro-page [style*="background: white"],
+.audit-log-pro-page [style*="background:#ffffff"],
+.cancellation-pro-page [style*="background:#ffffff"],
+.cancellation-status-pro-page [style*="background:#ffffff"],
+.refund-history-pro-page [style*="background:#ffffff"],
+.email-management-pro-page [style*="background:#ffffff"],
+.batch-cancellation-pro-page [style*="background:#ffffff"] {
+    background: linear-gradient(145deg, rgba(11, 17, 34, 0.96), rgba(7, 11, 24, 0.90)) !important;
+    color: var(--bo-text) !important;
+    border-color: var(--bo-border) !important;
+    box-shadow: var(--bo-shadow) !important;
+}
+
+.audit-log-pro-page [style*="background: #f4f7fb"],
+.cancellation-pro-page [style*="background: #f4f7fb"],
+.cancellation-status-pro-page [style*="background: #f4f7fb"],
+.refund-history-pro-page [style*="background: #f4f7fb"],
+.email-management-pro-page [style*="background: #f4f7fb"],
+.batch-cancellation-pro-page [style*="background: #f4f7fb"],
+.audit-log-pro-page [style*="background: #eef4fb"],
+.cancellation-pro-page [style*="background: #eef4fb"],
+.cancellation-status-pro-page [style*="background: #eef4fb"],
+.refund-history-pro-page [style*="background: #eef4fb"],
+.email-management-pro-page [style*="background: #eef4fb"],
+.batch-cancellation-pro-page [style*="background: #eef4fb"] {
+    background: rgba(15, 23, 42, 0.74) !important;
+    color: var(--bo-text) !important;
+    border-color: var(--bo-border-soft) !important;
+}
+
+.audit-log-pro-page h1,
+.audit-log-pro-page h2,
+.audit-log-pro-page h3,
+.cancellation-pro-page h1,
+.cancellation-pro-page h2,
+.cancellation-pro-page h3,
+.cancellation-status-pro-page h1,
+.cancellation-status-pro-page h2,
+.cancellation-status-pro-page h3,
+.refund-history-pro-page h1,
+.refund-history-pro-page h2,
+.refund-history-pro-page h3,
+.email-management-pro-page h1,
+.email-management-pro-page h2,
+.email-management-pro-page h3,
+.batch-cancellation-pro-page h1,
+.batch-cancellation-pro-page h2,
+.batch-cancellation-pro-page h3 {
+    color: var(--bo-text) !important;
+    letter-spacing: 0.05em;
+}
+
+.audit-log-pro-page span,
+.audit-log-pro-page p,
+.cancellation-pro-page span,
+.cancellation-pro-page p,
+.cancellation-status-pro-page span,
+.cancellation-status-pro-page p,
+.refund-history-pro-page span,
+.refund-history-pro-page p,
+.email-management-pro-page span,
+.email-management-pro-page p,
+.batch-cancellation-pro-page span,
+.batch-cancellation-pro-page p {
+    border-color: rgba(214, 170, 66, 0.24);
+}
+
+.audit-log-pro-page [style*="color: #142033"],
+.cancellation-pro-page [style*="color: #142033"],
+.cancellation-status-pro-page [style*="color: #142033"],
+.refund-history-pro-page [style*="color: #142033"],
+.email-management-pro-page [style*="color: #142033"],
+.batch-cancellation-pro-page [style*="color: #142033"] {
+    color: var(--bo-text) !important;
+}
+
+.audit-log-pro-page [style*="color: #64748b"],
+.cancellation-pro-page [style*="color: #64748b"],
+.cancellation-status-pro-page [style*="color: #64748b"],
+.refund-history-pro-page [style*="color: #64748b"],
+.email-management-pro-page [style*="color: #64748b"],
+.batch-cancellation-pro-page [style*="color: #64748b"],
+.audit-log-pro-page [style*="color: #94a3b8"],
+.cancellation-pro-page [style*="color: #94a3b8"],
+.cancellation-status-pro-page [style*="color: #94a3b8"],
+.refund-history-pro-page [style*="color: #94a3b8"],
+.email-management-pro-page [style*="color: #94a3b8"],
+.batch-cancellation-pro-page [style*="color: #94a3b8"] {
+    color: var(--bo-muted) !important;
+}
+
+/* cards / panels */
+.audit-log-pro-page > div > div,
+.cancellation-pro-page > div > div,
+.cancellation-status-pro-page > div > div,
+.refund-history-pro-page > div > div,
+.email-management-pro-page > div > div,
+.batch-cancellation-pro-page > div > div {
+    border-radius: 28px;
+}
+
+.audit-log-pro-page [style*="border: 1px solid"],
+.cancellation-pro-page [style*="border: 1px solid"],
+.cancellation-status-pro-page [style*="border: 1px solid"],
+.refund-history-pro-page [style*="border: 1px solid"],
+.email-management-pro-page [style*="border: 1px solid"],
+.batch-cancellation-pro-page [style*="border: 1px solid"] {
+    border-color: var(--bo-border) !important;
+}
+
+.audit-log-pro-page [style*="box-shadow"],
+.cancellation-pro-page [style*="box-shadow"],
+.cancellation-status-pro-page [style*="box-shadow"],
+.refund-history-pro-page [style*="box-shadow"],
+.email-management-pro-page [style*="box-shadow"],
+.batch-cancellation-pro-page [style*="box-shadow"] {
+    box-shadow: var(--bo-shadow) !important;
+}
+
+/* inputs */
+.audit-log-pro-page vaadin-text-field,
+.audit-log-pro-page vaadin-combo-box,
+.audit-log-pro-page vaadin-date-picker,
+.audit-log-pro-page vaadin-text-area,
+.cancellation-pro-page vaadin-text-field,
+.cancellation-pro-page vaadin-combo-box,
+.cancellation-pro-page vaadin-date-picker,
+.cancellation-pro-page vaadin-text-area,
+.cancellation-status-pro-page vaadin-text-field,
+.cancellation-status-pro-page vaadin-combo-box,
+.cancellation-status-pro-page vaadin-date-picker,
+.cancellation-status-pro-page vaadin-text-area,
+.refund-history-pro-page vaadin-text-field,
+.refund-history-pro-page vaadin-combo-box,
+.refund-history-pro-page vaadin-date-picker,
+.refund-history-pro-page vaadin-text-area,
+.email-management-pro-page vaadin-text-field,
+.email-management-pro-page vaadin-combo-box,
+.email-management-pro-page vaadin-date-picker,
+.email-management-pro-page vaadin-text-area,
+.batch-cancellation-pro-page vaadin-text-field,
+.batch-cancellation-pro-page vaadin-combo-box,
+.batch-cancellation-pro-page vaadin-date-picker,
+.batch-cancellation-pro-page vaadin-text-area {
+    --vaadin-input-field-background: rgba(11, 17, 34, 0.92);
+    --vaadin-input-field-border-width: 1px;
+    --vaadin-input-field-border-color: rgba(214, 170, 66, 0.28);
+    --vaadin-input-field-value-color: var(--bo-text);
+    --vaadin-input-field-placeholder-color: rgba(163, 173, 191, 0.78);
+    --vaadin-input-field-label-color: var(--bo-muted);
+    --vaadin-focus-ring-color: rgba(230, 195, 86, 0.45);
+    color: var(--bo-text) !important;
+}
+
+/* buttons */
+.audit-log-pro-page vaadin-button,
+.cancellation-pro-page vaadin-button,
+.cancellation-status-pro-page vaadin-button,
+.refund-history-pro-page vaadin-button,
+.email-management-pro-page vaadin-button,
+.batch-cancellation-pro-page vaadin-button {
+    border-radius: 999px !important;
+    border: 1px solid rgba(214, 170, 66, 0.30) !important;
+    background: rgba(12, 18, 36, 0.88) !important;
+    color: var(--bo-text) !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.02em;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.22);
+    transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+.audit-log-pro-page vaadin-button:hover,
+.cancellation-pro-page vaadin-button:hover,
+.cancellation-status-pro-page vaadin-button:hover,
+.refund-history-pro-page vaadin-button:hover,
+.email-management-pro-page vaadin-button:hover,
+.batch-cancellation-pro-page vaadin-button:hover {
+    transform: translateY(-2px);
+    border-color: rgba(230, 195, 86, 0.75) !important;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, 0.34), 0 0 0 1px rgba(230, 195, 86, 0.14);
+}
+
+.audit-log-pro-page vaadin-button[theme~="primary"],
+.cancellation-pro-page vaadin-button[theme~="primary"],
+.cancellation-status-pro-page vaadin-button[theme~="primary"],
+.refund-history-pro-page vaadin-button[theme~="primary"],
+.email-management-pro-page vaadin-button[theme~="primary"],
+.batch-cancellation-pro-page vaadin-button[theme~="primary"] {
+    background: linear-gradient(135deg, #f1d06a, #c89a35) !important;
+    color: #090e1e !important;
+    border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+/* grids */
+.audit-log-pro-page vaadin-grid,
+.cancellation-pro-page vaadin-grid,
+.cancellation-status-pro-page vaadin-grid,
+.refund-history-pro-page vaadin-grid,
+.email-management-pro-page vaadin-grid,
+.batch-cancellation-pro-page vaadin-grid {
+    background: rgba(7, 11, 24, 0.92) !important;
+    border: 1px solid rgba(214, 170, 66, 0.24) !important;
+    border-radius: 22px !important;
+    overflow: hidden;
+    color: var(--bo-text) !important;
+    box-shadow: 0 18px 54px rgba(0, 0, 0, 0.26);
+    --lumo-base-color: rgba(7, 11, 24, 0.96);
+    --lumo-body-text-color: var(--bo-text);
+    --lumo-secondary-text-color: var(--bo-muted);
+    --lumo-contrast-5pct: rgba(255,255,255,0.04);
+    --lumo-contrast-10pct: rgba(255,255,255,0.07);
+}
+
+.audit-log-pro-page vaadin-grid::part(header-cell),
+.cancellation-pro-page vaadin-grid::part(header-cell),
+.cancellation-status-pro-page vaadin-grid::part(header-cell),
+.refund-history-pro-page vaadin-grid::part(header-cell),
+.email-management-pro-page vaadin-grid::part(header-cell),
+.batch-cancellation-pro-page vaadin-grid::part(header-cell) {
+    background: rgba(12, 18, 36, 0.98);
+    color: var(--bo-gold);
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(214, 170, 66, 0.24);
+}
+
+.audit-log-pro-page vaadin-grid::part(cell),
+.cancellation-pro-page vaadin-grid::part(cell),
+.cancellation-status-pro-page vaadin-grid::part(cell),
+.refund-history-pro-page vaadin-grid::part(cell),
+.email-management-pro-page vaadin-grid::part(cell),
+.batch-cancellation-pro-page vaadin-grid::part(cell) {
+    background: rgba(7, 11, 24, 0.78);
+    color: var(--bo-text);
+    border-bottom: 1px solid rgba(148, 163, 184, 0.10);
+}
+
+.audit-log-pro-page vaadin-grid::part(row):hover,
+.cancellation-pro-page vaadin-grid::part(row):hover,
+.refund-history-pro-page vaadin-grid::part(row):hover,
+.email-management-pro-page vaadin-grid::part(row):hover,
+.batch-cancellation-pro-page vaadin-grid::part(row):hover {
+    background: rgba(230, 195, 86, 0.07);
+}
+
+/* stepper / status chips */
+.cancellation-status-pro-page [style*="border-radius: 16px"],
+.cancellation-status-pro-page [style*="border-radius: 999px"],
+.cancellation-pro-page [style*="border-radius: 999px"],
+.email-management-pro-page [style*="border-radius: 999px"],
+.refund-history-pro-page [style*="border-radius: 999px"],
+.audit-log-pro-page [style*="border-radius: 999px"] {
+    border-color: rgba(214, 170, 66, 0.28) !important;
+}
+
+/* legacy colored financial blocks: make them less bright */
+.cancellation-status-pro-page [style*="background: #fffbeb"],
+.cancellation-status-pro-page [style*="background: #ecfdf5"],
+.email-management-pro-page [style*="background: #fffbeb"],
+.email-management-pro-page [style*="background: #ecfdf5"] {
+    background: rgba(14, 21, 42, 0.92) !important;
+    border-color: rgba(230, 195, 86, 0.42) !important;
+    color: var(--bo-text) !important;
+}
+
+/* radio / checkbox groups */
+.cancellation-status-pro-page vaadin-checkbox,
+.cancellation-status-pro-page vaadin-radio-button,
+.email-management-pro-page vaadin-checkbox,
+.batch-cancellation-pro-page vaadin-checkbox {
+    color: var(--bo-text) !important;
+}
+
+/* dialogs used by email preview / receipt preview */
+vaadin-dialog-overlay::part(overlay) {
+    background: linear-gradient(145deg, rgba(11, 17, 34, 0.98), rgba(4, 8, 18, 0.98)) !important;
+    color: var(--bo-text) !important;
+    border: 1px solid rgba(214, 170, 66, 0.28) !important;
+    border-radius: 26px !important;
+    box-shadow: 0 32px 90px rgba(0,0,0,0.54) !important;
+}
+
+vaadin-dialog-overlay::part(backdrop) {
+    background: rgba(0, 0, 0, 0.70) !important;
+    backdrop-filter: blur(8px);
+}
+
+/* route-level scrollbars */
+.audit-log-pro-page ::-webkit-scrollbar,
+.cancellation-pro-page ::-webkit-scrollbar,
+.cancellation-status-pro-page ::-webkit-scrollbar,
+.refund-history-pro-page ::-webkit-scrollbar,
+.email-management-pro-page ::-webkit-scrollbar,
+.batch-cancellation-pro-page ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.audit-log-pro-page ::-webkit-scrollbar-thumb,
+.cancellation-pro-page ::-webkit-scrollbar-thumb,
+.cancellation-status-pro-page ::-webkit-scrollbar-thumb,
+.refund-history-pro-page ::-webkit-scrollbar-thumb,
+.email-management-pro-page ::-webkit-scrollbar-thumb,
+.batch-cancellation-pro-page ::-webkit-scrollbar-thumb {
+    background: rgba(214, 170, 66, 0.40);
+    border-radius: 999px;
+}
+
+@media (max-width: 900px) {
+    .audit-log-pro-page > div,
+    .cancellation-pro-page > div,
+    .cancellation-status-pro-page > div,
+    .refund-history-pro-page > div,
+    .email-management-pro-page > div,
+    .batch-cancellation-pro-page > div {
+        padding: 28px 20px !important;
+    }
+
+    .audit-log-pro-page vaadin-grid,
+    .cancellation-pro-page vaadin-grid,
+    .refund-history-pro-page vaadin-grid,
+    .email-management-pro-page vaadin-grid,
+    .batch-cancellation-pro-page vaadin-grid {
+        font-size: 13px;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   Readability hotfix: some older Java views use inline LIGHT_PANEL values such
+   as "#ffffff" / "white" / "#f4f7fb". If those are not converted to dark,
+   the global white heading/text rules become unreadable. Keep all back-office
+   cards dark and make form labels/options visible.
+   -------------------------------------------------------------------------- */
+.audit-log-pro-page [style*="background: #ffffff"],
+.cancellation-pro-page [style*="background: #ffffff"],
+.cancellation-status-pro-page [style*="background: #ffffff"],
+.refund-history-pro-page [style*="background: #ffffff"],
+.email-management-pro-page [style*="background: #ffffff"],
+.batch-cancellation-pro-page [style*="background: #ffffff"],
+.audit-log-pro-page [style*="background:#ffffff"],
+.cancellation-pro-page [style*="background:#ffffff"],
+.cancellation-status-pro-page [style*="background:#ffffff"],
+.refund-history-pro-page [style*="background:#ffffff"],
+.email-management-pro-page [style*="background:#ffffff"],
+.batch-cancellation-pro-page [style*="background:#ffffff"],
+.audit-log-pro-page [style*="background: #fff"],
+.cancellation-pro-page [style*="background: #fff"],
+.cancellation-status-pro-page [style*="background: #fff"],
+.refund-history-pro-page [style*="background: #fff"],
+.email-management-pro-page [style*="background: #fff"],
+.batch-cancellation-pro-page [style*="background: #fff"],
+.audit-log-pro-page [style*="background-color: white"],
+.cancellation-pro-page [style*="background-color: white"],
+.cancellation-status-pro-page [style*="background-color: white"],
+.refund-history-pro-page [style*="background-color: white"],
+.email-management-pro-page [style*="background-color: white"],
+.batch-cancellation-pro-page [style*="background-color: white"],
+.audit-log-pro-page [style*="background-color: #ffffff"],
+.cancellation-pro-page [style*="background-color: #ffffff"],
+.cancellation-status-pro-page [style*="background-color: #ffffff"],
+.refund-history-pro-page [style*="background-color: #ffffff"],
+.email-management-pro-page [style*="background-color: #ffffff"],
+.batch-cancellation-pro-page [style*="background-color: #ffffff"],
+.audit-log-pro-page [style*="background: rgb(255, 255, 255)"],
+.cancellation-pro-page [style*="background: rgb(255, 255, 255)"],
+.cancellation-status-pro-page [style*="background: rgb(255, 255, 255)"],
+.refund-history-pro-page [style*="background: rgb(255, 255, 255)"],
+.email-management-pro-page [style*="background: rgb(255, 255, 255)"],
+.batch-cancellation-pro-page [style*="background: rgb(255, 255, 255)"] {
+    background:
+            radial-gradient(circle at 80% 0%, rgba(230, 195, 86, 0.10), transparent 34%),
+            linear-gradient(145deg, rgba(11, 17, 34, 0.98), rgba(5, 9, 20, 0.94)) !important;
+    color: var(--bo-text) !important;
+    border-color: rgba(214, 170, 66, 0.30) !important;
+    box-shadow: var(--bo-shadow) !important;
+}
+
+/* Cancellation status page: force the main step content card dark. */
+.cancellation-status-pro-page div[style*="max-width: 820px"][style*="padding: 32px"],
+.cancellation-status-pro-page div[style*="max-width: 820px"][style*="padding:32px"] {
+    background:
+            radial-gradient(circle at 80% 0%, rgba(230, 195, 86, 0.10), transparent 34%),
+            linear-gradient(145deg, rgba(11, 17, 34, 0.98), rgba(5, 9, 20, 0.94)) !important;
+    color: var(--bo-text) !important;
+    border: 1px solid rgba(214, 170, 66, 0.30) !important;
+}
+
+/* Soft panels inside refund pages, including the refund breakdown and receipt. */
+.cancellation-status-pro-page [style*="background: #f4f7fb"],
+.cancellation-status-pro-page [style*="background:#f4f7fb"],
+.cancellation-status-pro-page [style*="background: #eef4fb"],
+.cancellation-status-pro-page [style*="background:#eef4fb"],
+.cancellation-status-pro-page [style*="background: #fffbeb"],
+.cancellation-status-pro-page [style*="background:#fffbeb"],
+.cancellation-status-pro-page [style*="background: #ecfdf5"],
+.cancellation-status-pro-page [style*="background:#ecfdf5"],
+.cancellation-status-pro-page [style*="background: rgb(244, 247, 251)"],
+.cancellation-status-pro-page [style*="background: rgb(238, 244, 251)"],
+.cancellation-status-pro-page [style*="background: rgb(255, 251, 235)"],
+.cancellation-status-pro-page [style*="background: rgb(236, 253, 245)"] {
+    background: rgba(15, 23, 42, 0.88) !important;
+    color: var(--bo-text) !important;
+    border-color: rgba(214, 170, 66, 0.26) !important;
+}
+
+/* Step cards: completed/inactive steps should not become white or pale blue. */
+.cancellation-status-pro-page [style*="background: #dbeafe"],
+.cancellation-status-pro-page [style*="background:#dbeafe"],
+.cancellation-status-pro-page [style*="background: rgb(219, 234, 254)"] {
+    background: rgba(15, 23, 42, 0.82) !important;
+    color: #dbeafe !important;
+    border-color: rgba(214, 170, 66, 0.28) !important;
+}
+
+/* Text colours inside darkened panels. Override legacy light-theme inline colours. */
+.audit-log-pro-page [style*="color: #065f46"],
+.cancellation-pro-page [style*="color: #065f46"],
+.cancellation-status-pro-page [style*="color: #065f46"],
+.refund-history-pro-page [style*="color: #065f46"],
+.email-management-pro-page [style*="color: #065f46"],
+.batch-cancellation-pro-page [style*="color: #065f46"],
+.audit-log-pro-page [style*="color: #047857"],
+.cancellation-pro-page [style*="color: #047857"],
+.cancellation-status-pro-page [style*="color: #047857"],
+.refund-history-pro-page [style*="color: #047857"],
+.email-management-pro-page [style*="color: #047857"],
+.batch-cancellation-pro-page [style*="color: #047857"],
+.audit-log-pro-page [style*="color: #92400e"],
+.cancellation-pro-page [style*="color: #92400e"],
+.cancellation-status-pro-page [style*="color: #92400e"],
+.refund-history-pro-page [style*="color: #92400e"],
+.email-management-pro-page [style*="color: #92400e"],
+.batch-cancellation-pro-page [style*="color: #92400e"],
+.audit-log-pro-page [style*="color: #78350f"],
+.cancellation-pro-page [style*="color: #78350f"],
+.cancellation-status-pro-page [style*="color: #78350f"],
+.refund-history-pro-page [style*="color: #78350f"],
+.email-management-pro-page [style*="color: #78350f"],
+.batch-cancellation-pro-page [style*="color: #78350f"] {
+    color: var(--bo-text) !important;
+}
+
+.cancellation-status-pro-page [style*="color: #64748b"],
+.cancellation-status-pro-page [style*="color:#64748b"],
+.cancellation-status-pro-page [style*="color: rgb(100, 116, 139)"] {
+    color: var(--bo-muted) !important;
+}
+
+/* Make checkbox/radio labels readable, including disabled refund items. */
+.cancellation-status-pro-page vaadin-checkbox,
+.cancellation-status-pro-page vaadin-radio-button,
+.cancellation-status-pro-page vaadin-radio-group,
+.cancellation-status-pro-page vaadin-checkbox-group {
+    color: var(--bo-text) !important;
+    --lumo-primary-color: #e6c356;
+    --lumo-body-text-color: var(--bo-text);
+    --lumo-secondary-text-color: var(--bo-muted);
+    --lumo-disabled-text-color: rgba(203, 213, 225, 0.60);
+}
+
+.cancellation-status-pro-page vaadin-checkbox::part(label),
+.cancellation-status-pro-page vaadin-radio-button::part(label) {
+    color: var(--bo-text) !important;
+    opacity: 1 !important;
+}
+
+.cancellation-status-pro-page vaadin-checkbox[disabled]::part(label),
+.cancellation-status-pro-page vaadin-radio-button[disabled]::part(label) {
+    color: rgba(203, 213, 225, 0.62) !important;
+}
+
+/* Prevent white glow from washing out headings. */
+.cancellation-status-pro-page [style*="box-shadow"] {
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.38) !important;
+}
+
+/* ------------------------------------------------------------------
+   Clickability hotfix
+   Decorative dark/gold back-office layers must never intercept button,
+   grid or form interaction. Keep the visual theme but force functional
+   components above any pseudo layers.
+------------------------------------------------------------------- */
+.audit-log-pro-page::before,
+.cancellation-pro-page::before,
+.cancellation-status-pro-page::before,
+.refund-history-pro-page::before,
+.email-management-pro-page::before,
+.batch-cancellation-pro-page::before,
+.audit-log-pro-page::after,
+.cancellation-pro-page::after,
+.cancellation-status-pro-page::after,
+.refund-history-pro-page::after,
+.email-management-pro-page::after,
+.batch-cancellation-pro-page::after {
+    pointer-events: none !important;
+}
+
+.audit-log-pro-page vaadin-button,
+.cancellation-pro-page vaadin-button,
+.cancellation-status-pro-page vaadin-button,
+.refund-history-pro-page vaadin-button,
+.email-management-pro-page vaadin-button,
+.batch-cancellation-pro-page vaadin-button,
+.audit-log-pro-page vaadin-grid,
+.cancellation-pro-page vaadin-grid,
+.cancellation-status-pro-page vaadin-grid,
+.refund-history-pro-page vaadin-grid,
+.email-management-pro-page vaadin-grid,
+.batch-cancellation-pro-page vaadin-grid,
+.audit-log-pro-page vaadin-checkbox,
+.cancellation-pro-page vaadin-checkbox,
+.cancellation-status-pro-page vaadin-checkbox,
+.refund-history-pro-page vaadin-checkbox,
+.email-management-pro-page vaadin-checkbox,
+.batch-cancellation-pro-page vaadin-checkbox,
+.audit-log-pro-page vaadin-radio-button,
+.cancellation-pro-page vaadin-radio-button,
+.cancellation-status-pro-page vaadin-radio-button,
+.refund-history-pro-page vaadin-radio-button,
+.email-management-pro-page vaadin-radio-button,
+.batch-cancellation-pro-page vaadin-radio-button,
+.audit-log-pro-page vaadin-radio-group,
+.cancellation-pro-page vaadin-radio-group,
+.cancellation-status-pro-page vaadin-radio-group,
+.refund-history-pro-page vaadin-radio-group,
+.email-management-pro-page vaadin-radio-group,
+.batch-cancellation-pro-page vaadin-radio-group,
+.audit-log-pro-page vaadin-text-field,
+.cancellation-pro-page vaadin-text-field,
+.cancellation-status-pro-page vaadin-text-field,
+.refund-history-pro-page vaadin-text-field,
+.email-management-pro-page vaadin-text-field,
+.batch-cancellation-pro-page vaadin-text-field,
+.audit-log-pro-page vaadin-text-area,
+.cancellation-pro-page vaadin-text-area,
+.cancellation-status-pro-page vaadin-text-area,
+.refund-history-pro-page vaadin-text-area,
+.email-management-pro-page vaadin-text-area,
+.batch-cancellation-pro-page vaadin-text-area,
+.audit-log-pro-page vaadin-combo-box,
+.cancellation-pro-page vaadin-combo-box,
+.cancellation-status-pro-page vaadin-combo-box,
+.refund-history-pro-page vaadin-combo-box,
+.email-management-pro-page vaadin-combo-box,
+.batch-cancellation-pro-page vaadin-combo-box,
+.audit-log-pro-page vaadin-date-picker,
+.cancellation-pro-page vaadin-date-picker,
+.cancellation-status-pro-page vaadin-date-picker,
+.refund-history-pro-page vaadin-date-picker,
+.email-management-pro-page vaadin-date-picker,
+.batch-cancellation-pro-page vaadin-date-picker {
+    position: relative !important;
+    z-index: 5 !important;
+    pointer-events: auto !important;
+}
+
+.batch-cancellation-pro-page vaadin-button,
+.email-management-pro-page vaadin-button,
+.audit-log-pro-page vaadin-button,
+.cancellation-pro-page vaadin-button,
+.cancellation-status-pro-page vaadin-button,
+.refund-history-pro-page vaadin-button {
+    cursor: pointer !important;
+}
+
+.batch-cancellation-pro-page vaadin-button[disabled],
+.email-management-pro-page vaadin-button[disabled],
+.audit-log-pro-page vaadin-button[disabled],
+.cancellation-pro-page vaadin-button[disabled],
+.cancellation-status-pro-page vaadin-button[disabled],
+.refund-history-pro-page vaadin-button[disabled] {
+    cursor: not-allowed !important;
+    opacity: 0.55 !important;
+}
+
+.batch-cancellation-pro-page vaadin-grid::part(row),
+.batch-cancellation-pro-page vaadin-grid::part(cell),
+.batch-cancellation-pro-page vaadin-grid::part(checkbox) {
+    pointer-events: auto !important;
+}
+
+/* ------------------------------------------------------------------
+   Text contrast pass
+   Keep dark-theme back-office text readable even when Java views emit
+   legacy light-theme inline colours. This section intentionally changes
+   text colours only.
+------------------------------------------------------------------- */
+.audit-log-pro-page,
+.cancellation-pro-page,
+.cancellation-status-pro-page,
+.refund-history-pro-page,
+.email-management-pro-page,
+.batch-cancellation-pro-page {
+    --bo-text: #f9fbff;
+    --bo-muted: #d2dbea;
+    --bo-subtle: #b8c4d6;
+    --lumo-body-text-color: #f9fbff;
+    --lumo-secondary-text-color: #d2dbea;
+    --lumo-tertiary-text-color: #b8c4d6;
+    --lumo-disabled-text-color: #aebbd0;
+    color: #f9fbff !important;
+}
+
+.audit-log-pro-page :is(h1, h2, h3, h4, h5, h6, strong, b),
+.cancellation-pro-page :is(h1, h2, h3, h4, h5, h6, strong, b),
+.cancellation-status-pro-page :is(h1, h2, h3, h4, h5, h6, strong, b),
+.refund-history-pro-page :is(h1, h2, h3, h4, h5, h6, strong, b),
+.email-management-pro-page :is(h1, h2, h3, h4, h5, h6, strong, b),
+.batch-cancellation-pro-page :is(h1, h2, h3, h4, h5, h6, strong, b) {
+    color: #ffffff !important;
+}
+
+.audit-log-pro-page :is(p, span, label, small),
+.cancellation-pro-page :is(p, span, label, small),
+.cancellation-status-pro-page :is(p, span, label, small),
+.refund-history-pro-page :is(p, span, label, small),
+.email-management-pro-page :is(p, span, label, small),
+.batch-cancellation-pro-page :is(p, span, label, small) {
+    color: #d2dbea !important;
+}
+
+.audit-log-pro-page [style*="color: #142033"],
+.audit-log-pro-page [style*="color:#142033"],
+.audit-log-pro-page [style*="color: rgb(20, 32, 51)"],
+.cancellation-pro-page [style*="color: #142033"],
+.cancellation-pro-page [style*="color:#142033"],
+.cancellation-pro-page [style*="color: rgb(20, 32, 51)"],
+.cancellation-status-pro-page [style*="color: #142033"],
+.cancellation-status-pro-page [style*="color:#142033"],
+.cancellation-status-pro-page [style*="color: rgb(20, 32, 51)"],
+.refund-history-pro-page [style*="color: #142033"],
+.refund-history-pro-page [style*="color:#142033"],
+.refund-history-pro-page [style*="color: rgb(20, 32, 51)"],
+.email-management-pro-page [style*="color: #142033"],
+.email-management-pro-page [style*="color:#142033"],
+.email-management-pro-page [style*="color: rgb(20, 32, 51)"],
+.batch-cancellation-pro-page [style*="color: #142033"],
+.batch-cancellation-pro-page [style*="color:#142033"],
+.batch-cancellation-pro-page [style*="color: rgb(20, 32, 51)"],
+.audit-log-pro-page [style*="color: #0f172a"],
+.audit-log-pro-page [style*="color:#0f172a"],
+.cancellation-pro-page [style*="color: #0f172a"],
+.cancellation-pro-page [style*="color:#0f172a"],
+.cancellation-status-pro-page [style*="color: #0f172a"],
+.cancellation-status-pro-page [style*="color:#0f172a"],
+.refund-history-pro-page [style*="color: #0f172a"],
+.refund-history-pro-page [style*="color:#0f172a"],
+.email-management-pro-page [style*="color: #0f172a"],
+.email-management-pro-page [style*="color:#0f172a"],
+.batch-cancellation-pro-page [style*="color: #0f172a"],
+.batch-cancellation-pro-page [style*="color:#0f172a"],
+.audit-log-pro-page [style*="color: #111827"],
+.audit-log-pro-page [style*="color:#111827"],
+.cancellation-pro-page [style*="color: #111827"],
+.cancellation-pro-page [style*="color:#111827"],
+.cancellation-status-pro-page [style*="color: #111827"],
+.cancellation-status-pro-page [style*="color:#111827"],
+.refund-history-pro-page [style*="color: #111827"],
+.refund-history-pro-page [style*="color:#111827"],
+.email-management-pro-page [style*="color: #111827"],
+.email-management-pro-page [style*="color:#111827"],
+.batch-cancellation-pro-page [style*="color: #111827"],
+.batch-cancellation-pro-page [style*="color:#111827"] {
+    color: #f9fbff !important;
+}
+
+.audit-log-pro-page [style*="color: #005ba6"],
+.audit-log-pro-page [style*="color:#005ba6"],
+.cancellation-pro-page [style*="color: #005ba6"],
+.cancellation-pro-page [style*="color:#005ba6"],
+.cancellation-status-pro-page [style*="color: #005ba6"],
+.cancellation-status-pro-page [style*="color:#005ba6"],
+.refund-history-pro-page [style*="color: #005ba6"],
+.refund-history-pro-page [style*="color:#005ba6"],
+.email-management-pro-page [style*="color: #005ba6"],
+.email-management-pro-page [style*="color:#005ba6"],
+.batch-cancellation-pro-page [style*="color: #005ba6"],
+.batch-cancellation-pro-page [style*="color:#005ba6"],
+.audit-log-pro-page [style*="color: #1e40af"],
+.audit-log-pro-page [style*="color:#1e40af"],
+.cancellation-pro-page [style*="color: #1e40af"],
+.cancellation-pro-page [style*="color:#1e40af"],
+.cancellation-status-pro-page [style*="color: #1e40af"],
+.cancellation-status-pro-page [style*="color:#1e40af"],
+.refund-history-pro-page [style*="color: #1e40af"],
+.refund-history-pro-page [style*="color:#1e40af"],
+.email-management-pro-page [style*="color: #1e40af"],
+.email-management-pro-page [style*="color:#1e40af"],
+.batch-cancellation-pro-page [style*="color: #1e40af"],
+.batch-cancellation-pro-page [style*="color:#1e40af"],
+.audit-log-pro-page [style*="color: #4c1d95"],
+.audit-log-pro-page [style*="color:#4c1d95"],
+.cancellation-pro-page [style*="color: #4c1d95"],
+.cancellation-pro-page [style*="color:#4c1d95"],
+.cancellation-status-pro-page [style*="color: #4c1d95"],
+.cancellation-status-pro-page [style*="color:#4c1d95"],
+.refund-history-pro-page [style*="color: #4c1d95"],
+.refund-history-pro-page [style*="color:#4c1d95"],
+.email-management-pro-page [style*="color: #4c1d95"],
+.email-management-pro-page [style*="color:#4c1d95"],
+.batch-cancellation-pro-page [style*="color: #4c1d95"],
+.batch-cancellation-pro-page [style*="color:#4c1d95"],
+.audit-log-pro-page [style*="color: #6b21a8"],
+.audit-log-pro-page [style*="color:#6b21a8"],
+.cancellation-pro-page [style*="color: #6b21a8"],
+.cancellation-pro-page [style*="color:#6b21a8"],
+.cancellation-status-pro-page [style*="color: #6b21a8"],
+.cancellation-status-pro-page [style*="color:#6b21a8"],
+.refund-history-pro-page [style*="color: #6b21a8"],
+.refund-history-pro-page [style*="color:#6b21a8"],
+.email-management-pro-page [style*="color: #6b21a8"],
+.email-management-pro-page [style*="color:#6b21a8"],
+.batch-cancellation-pro-page [style*="color: #6b21a8"],
+.batch-cancellation-pro-page [style*="color:#6b21a8"],
+.audit-log-pro-page [style*="color: #7c2d12"],
+.audit-log-pro-page [style*="color:#7c2d12"],
+.cancellation-pro-page [style*="color: #7c2d12"],
+.cancellation-pro-page [style*="color:#7c2d12"],
+.cancellation-status-pro-page [style*="color: #7c2d12"],
+.cancellation-status-pro-page [style*="color:#7c2d12"],
+.refund-history-pro-page [style*="color: #7c2d12"],
+.refund-history-pro-page [style*="color:#7c2d12"],
+.email-management-pro-page [style*="color: #7c2d12"],
+.email-management-pro-page [style*="color:#7c2d12"],
+.batch-cancellation-pro-page [style*="color: #7c2d12"],
+.batch-cancellation-pro-page [style*="color:#7c2d12"],
+.audit-log-pro-page [style*="color: #7c3aed"],
+.audit-log-pro-page [style*="color:#7c3aed"],
+.cancellation-pro-page [style*="color: #7c3aed"],
+.cancellation-pro-page [style*="color:#7c3aed"],
+.cancellation-status-pro-page [style*="color: #7c3aed"],
+.cancellation-status-pro-page [style*="color:#7c3aed"],
+.refund-history-pro-page [style*="color: #7c3aed"],
+.refund-history-pro-page [style*="color:#7c3aed"],
+.email-management-pro-page [style*="color: #7c3aed"],
+.email-management-pro-page [style*="color:#7c3aed"],
+.batch-cancellation-pro-page [style*="color: #7c3aed"],
+.batch-cancellation-pro-page [style*="color:#7c3aed"] {
+    color: #f9fbff !important;
+}
+
+.audit-log-pro-page [style*="color: #64748b"],
+.audit-log-pro-page [style*="color:#64748b"],
+.audit-log-pro-page [style*="color: rgb(100, 116, 139)"],
+.cancellation-pro-page [style*="color: #64748b"],
+.cancellation-pro-page [style*="color:#64748b"],
+.cancellation-pro-page [style*="color: rgb(100, 116, 139)"],
+.cancellation-status-pro-page [style*="color: #64748b"],
+.cancellation-status-pro-page [style*="color:#64748b"],
+.cancellation-status-pro-page [style*="color: rgb(100, 116, 139)"],
+.refund-history-pro-page [style*="color: #64748b"],
+.refund-history-pro-page [style*="color:#64748b"],
+.refund-history-pro-page [style*="color: rgb(100, 116, 139)"],
+.email-management-pro-page [style*="color: #64748b"],
+.email-management-pro-page [style*="color:#64748b"],
+.email-management-pro-page [style*="color: rgb(100, 116, 139)"],
+.batch-cancellation-pro-page [style*="color: #64748b"],
+.batch-cancellation-pro-page [style*="color:#64748b"],
+.batch-cancellation-pro-page [style*="color: rgb(100, 116, 139)"],
+.audit-log-pro-page [style*="color: #94a3b8"],
+.audit-log-pro-page [style*="color:#94a3b8"],
+.audit-log-pro-page [style*="color: rgb(148, 163, 184)"],
+.cancellation-pro-page [style*="color: #94a3b8"],
+.cancellation-pro-page [style*="color:#94a3b8"],
+.cancellation-pro-page [style*="color: rgb(148, 163, 184)"],
+.cancellation-status-pro-page [style*="color: #94a3b8"],
+.cancellation-status-pro-page [style*="color:#94a3b8"],
+.cancellation-status-pro-page [style*="color: rgb(148, 163, 184)"],
+.refund-history-pro-page [style*="color: #94a3b8"],
+.refund-history-pro-page [style*="color:#94a3b8"],
+.refund-history-pro-page [style*="color: rgb(148, 163, 184)"],
+.email-management-pro-page [style*="color: #94a3b8"],
+.email-management-pro-page [style*="color:#94a3b8"],
+.email-management-pro-page [style*="color: rgb(148, 163, 184)"],
+.batch-cancellation-pro-page [style*="color: #94a3b8"],
+.batch-cancellation-pro-page [style*="color:#94a3b8"],
+.batch-cancellation-pro-page [style*="color: rgb(148, 163, 184)"],
+.audit-log-pro-page [style*="color: #334155"],
+.audit-log-pro-page [style*="color:#334155"],
+.cancellation-pro-page [style*="color: #334155"],
+.cancellation-pro-page [style*="color:#334155"],
+.cancellation-status-pro-page [style*="color: #334155"],
+.cancellation-status-pro-page [style*="color:#334155"],
+.refund-history-pro-page [style*="color: #334155"],
+.refund-history-pro-page [style*="color:#334155"],
+.email-management-pro-page [style*="color: #334155"],
+.email-management-pro-page [style*="color:#334155"],
+.batch-cancellation-pro-page [style*="color: #334155"],
+.batch-cancellation-pro-page [style*="color:#334155"],
+.audit-log-pro-page [style*="color: #475569"],
+.audit-log-pro-page [style*="color:#475569"],
+.cancellation-pro-page [style*="color: #475569"],
+.cancellation-pro-page [style*="color:#475569"],
+.cancellation-status-pro-page [style*="color: #475569"],
+.cancellation-status-pro-page [style*="color:#475569"],
+.refund-history-pro-page [style*="color: #475569"],
+.refund-history-pro-page [style*="color:#475569"],
+.email-management-pro-page [style*="color: #475569"],
+.email-management-pro-page [style*="color:#475569"],
+.batch-cancellation-pro-page [style*="color: #475569"],
+.batch-cancellation-pro-page [style*="color:#475569"] {
+    color: #d2dbea !important;
+}
+
+.audit-log-pro-page [style*="color: rgba(255,255,255,0.55)"],
+.audit-log-pro-page [style*="color: rgba(255, 255, 255, 0.55)"],
+.cancellation-pro-page [style*="color: rgba(255,255,255,0.55)"],
+.cancellation-pro-page [style*="color: rgba(255, 255, 255, 0.55)"],
+.cancellation-status-pro-page [style*="color: rgba(255,255,255,0.55)"],
+.cancellation-status-pro-page [style*="color: rgba(255, 255, 255, 0.55)"],
+.refund-history-pro-page [style*="color: rgba(255,255,255,0.55)"],
+.refund-history-pro-page [style*="color: rgba(255, 255, 255, 0.55)"],
+.email-management-pro-page [style*="color: rgba(255,255,255,0.55)"],
+.email-management-pro-page [style*="color: rgba(255, 255, 255, 0.55)"],
+.batch-cancellation-pro-page [style*="color: rgba(255,255,255,0.55)"],
+.batch-cancellation-pro-page [style*="color: rgba(255, 255, 255, 0.55)"],
+.audit-log-pro-page [style*="color: rgba(255,255,255,0.6)"],
+.audit-log-pro-page [style*="color: rgba(255, 255, 255, 0.6)"],
+.cancellation-pro-page [style*="color: rgba(255,255,255,0.6)"],
+.cancellation-pro-page [style*="color: rgba(255, 255, 255, 0.6)"],
+.cancellation-status-pro-page [style*="color: rgba(255,255,255,0.6)"],
+.cancellation-status-pro-page [style*="color: rgba(255, 255, 255, 0.6)"],
+.refund-history-pro-page [style*="color: rgba(255,255,255,0.6)"],
+.refund-history-pro-page [style*="color: rgba(255, 255, 255, 0.6)"],
+.email-management-pro-page [style*="color: rgba(255,255,255,0.6)"],
+.email-management-pro-page [style*="color: rgba(255, 255, 255, 0.6)"],
+.batch-cancellation-pro-page [style*="color: rgba(255,255,255,0.6)"],
+.batch-cancellation-pro-page [style*="color: rgba(255, 255, 255, 0.6)"] {
+    color: #cbd5e1 !important;
+}
+
+.audit-log-pro-page :is(vaadin-checkbox, vaadin-radio-button, vaadin-radio-group, vaadin-checkbox-group),
+.cancellation-pro-page :is(vaadin-checkbox, vaadin-radio-button, vaadin-radio-group, vaadin-checkbox-group),
+.cancellation-status-pro-page :is(vaadin-checkbox, vaadin-radio-button, vaadin-radio-group, vaadin-checkbox-group),
+.refund-history-pro-page :is(vaadin-checkbox, vaadin-radio-button, vaadin-radio-group, vaadin-checkbox-group),
+.email-management-pro-page :is(vaadin-checkbox, vaadin-radio-button, vaadin-radio-group, vaadin-checkbox-group),
+.batch-cancellation-pro-page :is(vaadin-checkbox, vaadin-radio-button, vaadin-radio-group, vaadin-checkbox-group) {
+    color: #f9fbff !important;
+    --lumo-body-text-color: #f9fbff;
+    --lumo-secondary-text-color: #d2dbea;
+    --lumo-disabled-text-color: #aebbd0;
+}
+
+.audit-log-pro-page :is(vaadin-checkbox, vaadin-radio-button)::part(label),
+.cancellation-pro-page :is(vaadin-checkbox, vaadin-radio-button)::part(label),
+.cancellation-status-pro-page :is(vaadin-checkbox, vaadin-radio-button)::part(label),
+.refund-history-pro-page :is(vaadin-checkbox, vaadin-radio-button)::part(label),
+.email-management-pro-page :is(vaadin-checkbox, vaadin-radio-button)::part(label),
+.batch-cancellation-pro-page :is(vaadin-checkbox, vaadin-radio-button)::part(label) {
+    color: #f9fbff !important;
+}
+
+.audit-log-pro-page :is(vaadin-checkbox, vaadin-radio-button)[disabled]::part(label),
+.cancellation-pro-page :is(vaadin-checkbox, vaadin-radio-button)[disabled]::part(label),
+.cancellation-status-pro-page :is(vaadin-checkbox, vaadin-radio-button)[disabled]::part(label),
+.refund-history-pro-page :is(vaadin-checkbox, vaadin-radio-button)[disabled]::part(label),
+.email-management-pro-page :is(vaadin-checkbox, vaadin-radio-button)[disabled]::part(label),
+.batch-cancellation-pro-page :is(vaadin-checkbox, vaadin-radio-button)[disabled]::part(label) {
+    color: #aebbd0 !important;
+}
+
+.audit-log-pro-page :is(vaadin-text-field, vaadin-combo-box, vaadin-date-picker, vaadin-text-area),
+.cancellation-pro-page :is(vaadin-text-field, vaadin-combo-box, vaadin-date-picker, vaadin-text-area),
+.cancellation-status-pro-page :is(vaadin-text-field, vaadin-combo-box, vaadin-date-picker, vaadin-text-area),
+.refund-history-pro-page :is(vaadin-text-field, vaadin-combo-box, vaadin-date-picker, vaadin-text-area),
+.email-management-pro-page :is(vaadin-text-field, vaadin-combo-box, vaadin-date-picker, vaadin-text-area),
+.batch-cancellation-pro-page :is(vaadin-text-field, vaadin-combo-box, vaadin-date-picker, vaadin-text-area) {
+    --vaadin-input-field-value-color: #f9fbff;
+    --vaadin-input-field-label-color: #d2dbea;
+    --vaadin-input-field-placeholder-color: #aebbd0;
+    --vaadin-input-field-helper-color: #cbd5e1;
+    color: #f9fbff !important;
+}
+
+.audit-log-pro-page vaadin-grid,
+.cancellation-pro-page vaadin-grid,
+.cancellation-status-pro-page vaadin-grid,
+.refund-history-pro-page vaadin-grid,
+.email-management-pro-page vaadin-grid,
+.batch-cancellation-pro-page vaadin-grid {
+    --lumo-body-text-color: #f9fbff;
+    --lumo-secondary-text-color: #d2dbea;
+    --lumo-tertiary-text-color: #b8c4d6;
+    color: #f9fbff !important;
+}
+
+.audit-log-pro-page vaadin-grid::part(cell),
+.cancellation-pro-page vaadin-grid::part(cell),
+.cancellation-status-pro-page vaadin-grid::part(cell),
+.refund-history-pro-page vaadin-grid::part(cell),
+.email-management-pro-page vaadin-grid::part(cell),
+.batch-cancellation-pro-page vaadin-grid::part(cell) {
+    color: #f9fbff !important;
+}
+
+vaadin-dialog-overlay {
+    --lumo-body-text-color: #f9fbff;
+    --lumo-secondary-text-color: #d2dbea;
+    --lumo-disabled-text-color: #aebbd0;
+    color: #f9fbff !important;
+}
+
+/* Light surfaces and pastel badges need dark text even inside dark pages. */
+.audit-log-pro-page [style*="background: white"],
+.audit-log-pro-page [style*="background:white"],
+.audit-log-pro-page [style*="background: #fff"],
+.audit-log-pro-page [style*="background:#fff"],
+.audit-log-pro-page [style*="background: #ffffff"],
+.audit-log-pro-page [style*="background:#ffffff"],
+.batch-cancellation-pro-page [style*="background: white"],
+.batch-cancellation-pro-page [style*="background:white"],
+.batch-cancellation-pro-page [style*="background: #fff"],
+.batch-cancellation-pro-page [style*="background:#fff"],
+.batch-cancellation-pro-page [style*="background: #ffffff"],
+.batch-cancellation-pro-page [style*="background:#ffffff"],
+.batch-cancellation-pro-page [style*="background: #fff7ed"],
+.batch-cancellation-pro-page [style*="background:#fff7ed"],
+.batch-cancellation-pro-page [style*="background: rgb(255, 247, 237)"],
+.batch-cancellation-pro-page [style*="background:rgb(255, 247, 237)"],
+.batch-cancellation-pro-page [style*="background: #f8fafc"],
+.batch-cancellation-pro-page [style*="background:#f8fafc"],
+.batch-cancellation-pro-page [style*="background: rgb(248, 250, 252)"],
+.batch-cancellation-pro-page [style*="background:rgb(248, 250, 252)"],
+.batch-cancellation-pro-page [style*="background: #f0fdf4"],
+.batch-cancellation-pro-page [style*="background:#f0fdf4"],
+.batch-cancellation-pro-page [style*="background: rgb(240, 253, 244)"],
+.batch-cancellation-pro-page [style*="background:rgb(240, 253, 244)"],
+.batch-cancellation-pro-page [style*="background: #fef2f2"],
+.batch-cancellation-pro-page [style*="background:#fef2f2"],
+.batch-cancellation-pro-page [style*="background: rgb(254, 242, 242)"],
+.batch-cancellation-pro-page [style*="background:rgb(254, 242, 242)"] {
+    color: #142033 !important;
+}
+
+.audit-log-pro-page [style*="background: white"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.audit-log-pro-page [style*="background:white"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.audit-log-pro-page [style*="background: #fff"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.audit-log-pro-page [style*="background:#fff"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background: white"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background:white"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background: #fff"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background:#fff"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background: #fff7ed"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background:#fff7ed"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background: rgb(255, 247, 237)"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background:rgb(255, 247, 237)"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background: #f8fafc"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background:#f8fafc"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background: #f0fdf4"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background:#f0fdf4"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background: #fef2f2"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background:#fef2f2"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6) {
+    color: #142033 !important;
+}
+
+.audit-log-pro-page span[style*="background: #fee2e2"],
+.audit-log-pro-page span[style*="background:#fee2e2"],
+.audit-log-pro-page span[style*="background: rgb(254, 226, 226)"],
+.audit-log-pro-page span[style*="background:rgb(254, 226, 226)"] {
+    color: #7f1d1d !important;
+}
+
+.audit-log-pro-page span[style*="background: #dbeafe"],
+.audit-log-pro-page span[style*="background:#dbeafe"],
+.audit-log-pro-page span[style*="background: rgb(219, 234, 254)"],
+.audit-log-pro-page span[style*="background:rgb(219, 234, 254)"],
+.audit-log-pro-page span[style*="background: #e0f2fe"],
+.audit-log-pro-page span[style*="background:#e0f2fe"],
+.audit-log-pro-page span[style*="background: rgb(224, 242, 254)"],
+.audit-log-pro-page span[style*="background:rgb(224, 242, 254)"],
+.audit-log-pro-page span[style*="background: #cffafe"],
+.audit-log-pro-page span[style*="background:#cffafe"],
+.audit-log-pro-page span[style*="background: rgb(207, 250, 254)"],
+.audit-log-pro-page span[style*="background:rgb(207, 250, 254)"] {
+    color: #075985 !important;
+}
+
+.audit-log-pro-page span[style*="background: #fef3c7"],
+.audit-log-pro-page span[style*="background:#fef3c7"],
+.audit-log-pro-page span[style*="background: rgb(254, 243, 199)"],
+.audit-log-pro-page span[style*="background:rgb(254, 243, 199)"],
+.audit-log-pro-page span[style*="background: #fef9c3"],
+.audit-log-pro-page span[style*="background:#fef9c3"],
+.audit-log-pro-page span[style*="background: rgb(254, 249, 195)"],
+.audit-log-pro-page span[style*="background:rgb(254, 249, 195)"] {
+    color: #713f12 !important;
+}
+
+.audit-log-pro-page span[style*="background: #ede9fe"],
+.audit-log-pro-page span[style*="background:#ede9fe"],
+.audit-log-pro-page span[style*="background: rgb(237, 233, 254)"],
+.audit-log-pro-page span[style*="background:rgb(237, 233, 254)"] {
+    color: #4c1d95 !important;
+}
+
+.audit-log-pro-page span[style*="background: #dcfce7"],
+.audit-log-pro-page span[style*="background:#dcfce7"],
+.audit-log-pro-page span[style*="background: rgb(220, 252, 231)"],
+.audit-log-pro-page span[style*="background:rgb(220, 252, 231)"] {
+    color: #14532d !important;
+}
+
+.audit-log-pro-page span[style*="background: #e2e8f0"],
+.audit-log-pro-page span[style*="background:#e2e8f0"],
+.audit-log-pro-page span[style*="background: rgb(226, 232, 240)"],
+.audit-log-pro-page span[style*="background:rgb(226, 232, 240)"] {
+    color: #334155 !important;
+}
+
+/* Inline white blocks are converted to dark panels earlier, so keep their text light. */
+.audit-log-pro-page [style*="background: white"],
+.audit-log-pro-page [style*="background:white"],
+.audit-log-pro-page [style*="background: #fff"],
+.audit-log-pro-page [style*="background:#fff"],
+.audit-log-pro-page [style*="background: #ffffff"],
+.audit-log-pro-page [style*="background:#ffffff"],
+.audit-log-pro-page [style*="background: rgb(255, 255, 255)"],
+.audit-log-pro-page [style*="background:rgb(255, 255, 255)"],
+.batch-cancellation-pro-page [style*="background: white"],
+.batch-cancellation-pro-page [style*="background:white"],
+.batch-cancellation-pro-page [style*="background: #fff"],
+.batch-cancellation-pro-page [style*="background:#fff"],
+.batch-cancellation-pro-page [style*="background: #ffffff"],
+.batch-cancellation-pro-page [style*="background:#ffffff"],
+.batch-cancellation-pro-page [style*="background: rgb(255, 255, 255)"],
+.batch-cancellation-pro-page [style*="background:rgb(255, 255, 255)"] {
+    color: #f9fbff !important;
+}
+
+.audit-log-pro-page [style*="background: white"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.audit-log-pro-page [style*="background:white"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.audit-log-pro-page [style*="background: #fff"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.audit-log-pro-page [style*="background:#fff"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.audit-log-pro-page [style*="background: rgb(255, 255, 255)"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.audit-log-pro-page [style*="background:rgb(255, 255, 255)"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background: white"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background:white"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background: #fff"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background:#fff"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background: rgb(255, 255, 255)"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6),
+.batch-cancellation-pro-page [style*="background:rgb(255, 255, 255)"] :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6) {
+    color: #f9fbff !important;
+}
+
+.batch-cancellation-pro-page span[style*="background: white"],
+.batch-cancellation-pro-page span[style*="background:white"],
+.batch-cancellation-pro-page span[style*="background: #fff"],
+.batch-cancellation-pro-page span[style*="background:#fff"],
+.batch-cancellation-pro-page span[style*="background: #ffffff"],
+.batch-cancellation-pro-page span[style*="background:#ffffff"],
+.batch-cancellation-pro-page span[style*="background: rgb(255, 255, 255)"],
+.batch-cancellation-pro-page span[style*="background:rgb(255, 255, 255)"] {
+    color: #f9fbff !important;
+}
+
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: #fee2e2"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:#fee2e2"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: rgb(254, 226, 226)"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:rgb(254, 226, 226)"] {
+    color: #7f1d1d !important;
+}
+
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: #dbeafe"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:#dbeafe"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: rgb(219, 234, 254)"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:rgb(219, 234, 254)"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: #e0f2fe"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:#e0f2fe"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: rgb(224, 242, 254)"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:rgb(224, 242, 254)"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: #cffafe"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:#cffafe"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: rgb(207, 250, 254)"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:rgb(207, 250, 254)"] {
+    color: #075985 !important;
+}
+
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: #fef3c7"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:#fef3c7"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: rgb(254, 243, 199)"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:rgb(254, 243, 199)"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: #fef9c3"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:#fef9c3"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: rgb(254, 249, 195)"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:rgb(254, 249, 195)"] {
+    color: #713f12 !important;
+}
+
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: #ede9fe"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:#ede9fe"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: rgb(237, 233, 254)"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:rgb(237, 233, 254)"] {
+    color: #4c1d95 !important;
+}
+
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: #dcfce7"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:#dcfce7"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: rgb(220, 252, 231)"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:rgb(220, 252, 231)"] {
+    color: #14532d !important;
+}
+
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: #e2e8f0"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:#e2e8f0"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color: rgb(226, 232, 240)"],
+.audit-log-pro-page span[style*="border-radius: 999px"][style*="background-color:rgb(226, 232, 240)"] {
+    color: #334155 !important;
+}
+
+.audit-log-pro-page .audit-action-badge,
+.audit-log-pro-page vaadin-grid .audit-action-badge {
+    color: #142033 !important;
+}
+
+.batch-cancellation-pro-page .batch-inline-email,
+.batch-cancellation-pro-page .batch-inline-email :is(p, span, label, small, strong, b, h1, h2, h3, h4, h5, h6) {
+    color: #142033 !important;
+}
+
+.batch-cancellation-pro-page .batch-inline-email-chip,
+.batch-cancellation-pro-page .batch-inline-email-chip:is(p, span, label, small, strong, b),
+.batch-cancellation-pro-page .batch-inline-email .batch-inline-email-chip {
+    color: #f9fbff !important;
+}

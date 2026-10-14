@@ -1,0 +1,36 @@
+# Build output
+target/
+
+# Node dependencies
+node_modules/
+
+# IDE files
+.idea/
+.vscode/
+*.iml
+
+# macOS
+.DS_Store
+
+# Logs / environment
+*.log
+.env
+
+# Vaadin generated files
+.vaadin/
+frontend/generated/
+vite.generated.ts
+types.d.ts
+
+# Local H2 database files
+data/*.mv.db
+data/*.trace.db
+data/*.lock.db
+
+# Local uploaded files
+uploads/*
+!uploads/.gitkeep
+
+# Browser-agent verification screenshots (repo root only; do not affect
+# poster images under src/main/resources/META-INF/resources/images/).
+/*.png

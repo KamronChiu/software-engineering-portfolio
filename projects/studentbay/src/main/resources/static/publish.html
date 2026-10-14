@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>发布闲置 - StudentBay</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <link rel="stylesheet" href="/css/app.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script defer src="/js/app.js"></script>
+</head>
+<body data-page="publish">
+<header id="siteHeader"></header>
+<main class="shell narrow">
+    <div class="page-heading">
+        <div>
+            <span class="eyebrow" style="color:var(--campus)">Publish</span>
+            <h1>发布校园闲置</h1>
+            <p>清楚描述商品成色和交易地点，让同学更快作出决定。</p>
+        </div>
+    </div>
+    <form id="publishForm" class="card card-body form-grid" novalidate>
+        <div class="field span-2">
+            <label for="title">商品标题</label>
+            <input id="title" class="input" maxlength="120" placeholder="例如：Java 全栈开发教材" required>
+        </div>
+        <div class="field">
+            <label for="category">分类</label>
+            <select id="category" class="select" required>
+                <option>教材资料</option>
+                <option>数码产品</option>
+                <option>骑行装备</option>
+                <option>宿舍生活</option>
+                <option>服饰美妆</option>
+                <option>其他</option>
+            </select>
+        </div>
+        <div class="field">
+            <label for="condition">成色</label>
+            <select id="condition" class="select" required>
+                <option>全新</option>
+                <option selected>九成新</option>
+                <option>八成新</option>
+                <option>七成新及以下</option>
+            </select>
+        </div>
+        <div id="paramFields" class="param-fields span-2" aria-label="商品参数"></div>
+        <div class="field">
+            <label for="price">售价（元）</label>
+            <input id="price" class="input" type="number" min="0.01" step="0.01" placeholder="0.00" required>
+        </div>
+        <div class="field">
+            <label for="originalPrice">原价（元）</label>
+            <input id="originalPrice" class="input" type="number" min="0.01" step="0.01" placeholder="选填">
+        </div>
+        <div class="field span-2">
+            <label>商品图片</label>
+            <div id="imageGrid" class="image-grid" aria-label="商品图片，第 1 张为主图，最多 5 张">
+                <label for="fileInput" id="imageAddCell" class="image-cell image-add" role="button" tabindex="0" title="点击选择本地图片">
+                    <div class="image-add-main">
+                        <span class="image-add-plus">+</span>
+                        <small>添加图片</small>
+                    </div>
+                </label>
+            </div>
+            <input id="fileInput" class="sr-file" type="file" accept="image/*" multiple>
+            <div class="image-add-tools">
+                <button type="button" class="text-button" id="pickLinkBtn">粘贴图片链接</button>
+                <small>支持本地上传、拖拽图片、Ctrl+V 粘贴截图；粘贴链接后自动下载并显示，最多 5 张（第 1 张为主图）。</small>
+            </div>
+            <div id="linkInputRow" class="link-input-row hidden">
+                <input id="imageLink" class="input" type="url" placeholder="https://… 粘贴一张图片链接">
+                <button type="button" class="btn btn-primary btn-small" id="addLinkBtn">添加</button>
+            </div>
+        </div>
+        <div class="field span-2">
+            <label for="description">商品描述 <button type="button" id="aiOptimizeBtn" class="ai-optimize-btn" title="根据已填写的信息帮你润色描述">AI 优化描述</button></label>
+            <textarea id="description" class="textarea" maxlength="2000" placeholder="介绍使用情况、瑕疵、配件和交易偏好" required></textarea>
+            <div id="aiOptimizeHint" class="ai-optimize-hint hidden"><span>已根据你填写的信息生成，可继续手动修改</span><button type="button" id="aiRestoreLink" class="ai-restore-link">恢复原文</button></div>
+        </div>
+        <div class="field span-2">
+            <label>交易设置</label>
+            <div class="deal-config">
+                <label class="cut-toggle">
+                    <input type="checkbox" id="bargainEnabled">
+                    <span>可议价（买家可直接联系你商量价格）</span>
+                </label>
+                <div class="field">
+                    <label for="conditionDetail">成色 / 瑕疵说明</label>
+                    <textarea id="conditionDetail" class="textarea" maxlength="500" placeholder="例如：外观九五新，仅键盘一角有轻微使用痕迹，功能全部正常（选填）"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="field span-2">
+            <label>砍一刀（让买家体验"小刀"乐趣，随机降价后自动显示在详情页）</label>
+            <div class="cut-config">
+                <label class="cut-toggle">
+                    <input type="checkbox" id="cutEnabled">
+                    <span>开启砍价，买家可在详情页「砍一刀」</span>
+                </label>
+                <div id="cutOptions" class="cut-options hidden">
+                    <label class="cut-option"><input type="radio" name="cutMode" value="1-3" checked><span>1 - 3 元</span></label>
+                    <label class="cut-option"><input type="radio" name="cutMode" value="3-5"><span>3 - 5 元</span></label>
+                    <label class="cut-option"><input type="radio" name="cutMode" value="custom"><span>自定义区间</span></label>
+                    <div id="cutCustom" class="cut-custom hidden">
+                        <input id="cutMin" class="input" type="number" min="0.01" step="0.01" placeholder="最低降价 0.01">
+                        <span>至</span>
+                        <input id="cutMax" class="input" type="number" min="0.01" step="0.01" placeholder="最高降价">
+                    </div>
+                </div>
+            </div>
+            <small>开启后，买家可对该商品随机砍价，每件商品最多被砍 3 次、每位买家限砍一次；未开启砍价的商品买家无法小刀。</small>
+        </div>
+        <div class="field span-2">
+            <label>交易地点</label>
+            <div class="address-grid">
+                <div class="field">
+                    <label for="addressCountry">国家</label>
+                    <select id="addressCountry" class="select"></select>
+                </div>
+                <div class="field">
+                    <label for="addressProvince">省份</label>
+                    <select id="addressProvince" class="select"></select>
+                </div>
+                <div class="field">
+                    <label for="addressCity">城市</label>
+                    <select id="addressCity" class="select"></select>
+                </div>
+                <div class="field">
+                    <label for="addressDistrict">区/县</label>
+                    <select id="addressDistrict" class="select"></select>
+                </div>
+                <div class="field span-2">
+                    <label for="addressStreet">街道/园区</label>
+                    <select id="addressStreet" class="select"></select>
+                </div>
+                <div class="field span-2">
+                    <label for="addressDetailLine">楼栋/门牌等具体位置</label>
+                    <input id="addressDetailLine" class="input" maxlength="300" placeholder="例如：广东东软学院图书馆东门、北区宿舍 7 栋楼下">
+                </div>
+            </div>
+            <div class="address-locate-row">
+                <button type="button" id="addressLocateBtn" class="btn btn-primary btn-small">定位到所选地址</button>
+                <small>按 省 / 市 / 区 / 街道 选择并填写具体位置后点击「定位」，地图自动跳转；再点击地图上的具体位置可微调标记，交易地点名称会同步更新。</small>
+            </div>
+            <div class="location-result">
+                <span>交易地点名称</span>
+                <strong id="locationNameDisplay">未选择</strong>
+                <input id="locationName" type="hidden" autocomplete="off">
+            </div>
+        </div>
+        <div class="field span-2">
+            <label>在地图上选择位置</label>
+            <div id="publishMap" class="map map-pick"></div>
+            <small id="coordinateText">点击地图放置交易位置标记</small>
+        </div>
+        <div class="span-2 form-actions">
+            <button type="button" id="saveDraftBtn" class="btn btn-outline">保存草稿</button>
+            <button type="submit" id="publishBtn" class="btn btn-primary">确认发布</button>
+        </div>
+    </form>
+</main>
+<footer class="footer">发布内容应真实准确，请勿发布违禁商品</footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

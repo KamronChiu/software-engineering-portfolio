@@ -1,0 +1,17 @@
+Area,Shift,Input Delivery Rows,Trucks Used,Completion Time,Splits Checked,All Trucks Within 180 Mins,Resource Rule Applied,Policy
+A,1,6,1,131,1,Yes,"One truck feasible, so second truck not used to save resources",fewest trucks first; individual delivery tasks; same-sector tasks merge inside each truck
+A,2,4,1,111,1,Yes,"One truck feasible, so second truck not used to save resources",fewest trucks first; individual delivery tasks; same-sector tasks merge inside each truck
+A,3,4,1,111,1,Yes,"One truck feasible, so second truck not used to save resources",fewest trucks first; individual delivery tasks; same-sector tasks merge inside each truck
+A,4,5,1,121,1,Yes,"One truck feasible, so second truck not used to save resources",fewest trucks first; individual delivery tasks; same-sector tasks merge inside each truck
+B,1,5,1,118,1,Yes,"One truck feasible, so second truck not used to save resources",fewest trucks first; individual delivery tasks; same-sector tasks merge inside each truck
+B,2,4,1,130,1,Yes,"One truck feasible, so second truck not used to save resources",fewest trucks first; individual delivery tasks; same-sector tasks merge inside each truck
+B,3,5,1,130,1,Yes,"One truck feasible, so second truck not used to save resources",fewest trucks first; individual delivery tasks; same-sector tasks merge inside each truck
+B,4,5,1,140,1,Yes,"One truck feasible, so second truck not used to save resources",fewest trucks first; individual delivery tasks; same-sector tasks merge inside each truck
+C,1,4,1,111,1,Yes,"One truck feasible, so second truck not used to save resources",fewest trucks first; individual delivery tasks; same-sector tasks merge inside each truck
+C,2,4,1,105,1,Yes,"One truck feasible, so second truck not used to save resources",fewest trucks first; individual delivery tasks; same-sector tasks merge inside each truck
+C,3,5,1,120,1,Yes,"One truck feasible, so second truck not used to save resources",fewest trucks first; individual delivery tasks; same-sector tasks merge inside each truck
+C,4,4,1,105,1,Yes,"One truck feasible, so second truck not used to save resources",fewest trucks first; individual delivery tasks; same-sector tasks merge inside each truck
+D,1,5,1,127,1,Yes,"One truck feasible, so second truck not used to save resources",fewest trucks first; individual delivery tasks; same-sector tasks merge inside each truck
+D,2,5,1,134,1,Yes,"One truck feasible, so second truck not used to save resources",fewest trucks first; individual delivery tasks; same-sector tasks merge inside each truck
+D,3,6,1,144,1,Yes,"One truck feasible, so second truck not used to save resources",fewest trucks first; individual delivery tasks; same-sector tasks merge inside each truck
+D,4,5,1,134,1,Yes,"One truck feasible, so second truck not used to save resources",fewest trucks first; individual delivery tasks; same-sector tasks merge inside each truck

@@ -1,0 +1,27 @@
+{
+  "n_appointments": 2200,
+  "no_show_rate": 0.2009,
+  "avg_lead_time_days": 9.67,
+  "department_distribution": {
+    "cardiology": 0.2964,
+    "pediatrics": 0.2736,
+    "orthopedics": 0.2191,
+    "dermatology": 0.2109
+  },
+  "appointment_type_distribution": {
+    "checkup": 0.3841,
+    "follow-up": 0.3073,
+    "consultation": 0.1582,
+    "vaccination": 0.0855,
+    "procedure": 0.065
+  },
+  "weather_distribution": {
+    "sunny": 0.6241,
+    "cloudy": 0.1886,
+    "rainy": 0.1873
+  },
+  "time_slot_distribution": {
+    "morning": 0.6032,
+    "afternoon": 0.3968
+  }
+}

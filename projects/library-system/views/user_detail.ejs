@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>
+    <%= user.name %> — User Detail
+  </title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body class="user-detail-page">
+  <div class="container">
+    <div class="user-profile">
+      <div class="user-info">
+        <h1>
+          <%= user.name %>
+        </h1>
+        <p><strong>Date of Birth:</strong>
+          <%= user.dob %>
+        </p>
+        <p><a href="/users">← Back to User List</a></p>
+      </div>
+    </div>
+
+    <h2>Borrowed Books</h2>
+    <!--Success/Failure Hint-->
+    <div id="returnMessage" class="success-message" style="display:none;"></div>
+    <% if (borrowedBooks.length===0) { %>
+      <p class="error">This user has not borrowed any books.</p>
+      <% } else { %>
+        <table class="book-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Return</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% borrowedBooks.forEach(r=> { %>
+              <tr data-record="<%= r.recordId %>">
+                <td>
+                  <%= r.title %>
+                </td>
+                <td>
+                  <%= r.author_name %>
+                </td>
+                <td>
+                  <button class="btn-return" data-id="<%= r.recordId %>">
+                    <i class="fas fa-undo"></i> Return
+                  </button>
+                </td>
+              </tr>
+              <% }) %>
+          </tbody>
+        </table>
+        <% } %>
+
+          <h2>Borrow a New Book</h2>
+          <form action="/borrow" method="POST">
+            <input type="hidden" name="user_id" value="<%= user.id %>">
+            <label for="book_id">Select Book:</label>
+            <select name="book_id" id="book_id" required>
+              <% availableBooks.forEach(b=> { %>
+                <option value="<%= b.id %>">
+                  <%= b.title %> (available: <%= b.availability %>)
+                </option>
+                <% }) %>
+            </select>
+            <button type="submit">Borrow</button>
+          </form>
+
+          <p><a href="/">← Back to Book List</a></p>
+  </div>
+  <script src="/scripts.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+Area,Shift,Truck,Used,Deliveries,Route,Travel Time,Unloading Time,Total Truck Time,Spare Capacity,Shift Completion Time,Trucks Used In This Area-Shift,Feasible Within 180 Mins
+A,1,A-Truck-1,Yes,"A1 x1, A2 x1, A3 x1, A4 x1, A5 x1, A6 x1",HQ -> A1 -> A2 -> A3 -> A6 -> A5 -> A4 -> HQ,71,60,131,49,131,1,Yes
+A,1,A-Truck-2,No,No deliveries,HQ -> HQ,0,0,0,180,131,1,Yes
+A,2,A-Truck-1,Yes,"A2 x1, A4 x1, A5 x1, A6 x1",HQ -> A2 -> A6 -> A5 -> A4 -> HQ,71,40,111,69,111,1,Yes
+A,2,A-Truck-2,No,No deliveries,HQ -> HQ,0,0,0,180,111,1,Yes
+A,3,A-Truck-1,Yes,"A2 x1, A4 x1, A5 x1, A6 x1",HQ -> A2 -> A6 -> A5 -> A4 -> HQ,71,40,111,69,111,1,Yes
+A,3,A-Truck-2,No,No deliveries,HQ -> HQ,0,0,0,180,111,1,Yes
+A,4,A-Truck-1,Yes,"A1 x2, A2 x1, A3 x1, A5 x1",HQ -> A1 -> A2 -> A3 -> A5 -> HQ,71,50,121,59,121,1,Yes
+A,4,A-Truck-2,No,No deliveries,HQ -> HQ,0,0,0,180,121,1,Yes
+B,1,B-Truck-1,Yes,"B1 x1, B2 x2, B3 x1, B6 x1",HQ -> B1 -> B2 -> B3 -> B6 -> HQ,68,50,118,62,118,1,Yes
+B,1,B-Truck-2,No,No deliveries,HQ -> HQ,0,0,0,180,118,1,Yes
+B,2,B-Truck-1,Yes,"B1 x1, B2 x1, B5 x1, B6 x1",HQ -> B1 -> B2 -> B5 -> B6 -> HQ,90,40,130,50,130,1,Yes
+B,2,B-Truck-2,No,No deliveries,HQ -> HQ,0,0,0,180,130,1,Yes
+B,3,B-Truck-1,Yes,"B2 x1, B3 x1, B4 x2, B5 x1",HQ -> B2 -> B3 -> B4 -> B5 -> HQ,80,50,130,50,130,1,Yes
+B,3,B-Truck-2,No,No deliveries,HQ -> HQ,0,0,0,180,130,1,Yes
+B,4,B-Truck-1,Yes,"B1 x1, B2 x1, B3 x1, B5 x1, B6 x1",HQ -> B1 -> B2 -> B3 -> B6 -> B5 -> HQ,90,50,140,40,140,1,Yes
+B,4,B-Truck-2,No,No deliveries,HQ -> HQ,0,0,0,180,140,1,Yes
+C,1,C-Truck-1,Yes,"C1 x1, C3 x1, C5 x1, C6 x1",HQ -> C1 -> C3 -> C6 -> C5 -> HQ,71,40,111,69,111,1,Yes
+C,1,C-Truck-2,No,No deliveries,HQ -> HQ,0,0,0,180,111,1,Yes
+C,2,C-Truck-1,Yes,"C2 x1, C3 x1, C4 x1, C5 x1",HQ -> C2 -> C3 -> C4 -> C5 -> HQ,65,40,105,75,105,1,Yes
+C,2,C-Truck-2,No,No deliveries,HQ -> HQ,0,0,0,180,105,1,Yes
+C,3,C-Truck-1,Yes,"C1 x1, C2 x2, C3 x1, C6 x1",HQ -> C1 -> C2 -> C3 -> C6 -> HQ,70,50,120,60,120,1,Yes
+C,3,C-Truck-2,No,No deliveries,HQ -> HQ,0,0,0,180,120,1,Yes
+C,4,C-Truck-1,Yes,"C2 x1, C3 x1, C4 x1, C5 x1",HQ -> C2 -> C3 -> C4 -> C5 -> HQ,65,40,105,75,105,1,Yes
+C,4,C-Truck-2,No,No deliveries,HQ -> HQ,0,0,0,180,105,1,Yes
+D,1,D-Truck-1,Yes,"D1 x2, D3 x1, D4 x1, D6 x1",HQ -> D1 -> D3 -> D6 -> D4 -> HQ,77,50,127,53,127,1,Yes
+D,1,D-Truck-2,No,No deliveries,HQ -> HQ,0,0,0,180,127,1,Yes
+D,2,D-Truck-1,Yes,"D2 x1, D3 x1, D4 x1, D5 x1, D6 x1",HQ -> D2 -> D4 -> D6 -> D3 -> D5 -> HQ,84,50,134,46,134,1,Yes
+D,2,D-Truck-2,No,No deliveries,HQ -> HQ,0,0,0,180,134,1,Yes
+D,3,D-Truck-1,Yes,"D1 x2, D3 x1, D4 x1, D5 x1, D6 x1",HQ -> D1 -> D4 -> D6 -> D3 -> D5 -> HQ,84,60,144,36,144,1,Yes
+D,3,D-Truck-2,No,No deliveries,HQ -> HQ,0,0,0,180,144,1,Yes
+D,4,D-Truck-1,Yes,"D2 x1, D3 x1, D4 x1, D5 x1, D6 x1",HQ -> D2 -> D4 -> D6 -> D3 -> D5 -> HQ,84,50,134,46,134,1,Yes
+D,4,D-Truck-2,No,No deliveries,HQ -> HQ,0,0,0,180,134,1,Yes
